@@ -1,0 +1,41 @@
+name: solar_system_explorer
+description: A Flutter app to explore the solar system with NASA data
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # HTTP requests for NASA API
+  http: ^1.1.0
+  
+  # Internationalization and formatting
+  intl: ^0.19.0
+  
+  # State management
+  provider: ^6.1.1
+  
+  # AR functionality
+  ar_flutter_plugin: ^0.7.3
+  
+  # 3D rendering
+  flutter_cube: ^0.1.1
+  cached_network_image: ^3.4.1
+  shared_preferences: ^2.5.3
+  vector_math: ^2.1.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  mockito: ^5.6.1
+  build_runner: ^2.10.4
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/data/

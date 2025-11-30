@@ -1,0 +1,182 @@
+[
+  {
+    "id": "mercury",
+    "name": "Mercury",
+    "shortDescription": "Mercury is the smallest planet in the Solar System and the closest to the Sun.",
+    "detailedDescription": "Mercury is the smallest planet in the Solar System and the closest to the Sun. It is only slightly larger than Earth's Moon.",
+    "diameterKm": 4879,
+    "massKg": "3.285 × 10^23",
+    "distanceFromSunKm": 57900000,
+    "orbitalPeriodDays": 88,
+    "rotationPeriodHours": 1407.6,
+    "gravityMs2": 3.7,
+    "averageTemperatureC": 167,
+    "numberOfMoons": 0,
+    "atmosphere": "Minimal (Oxygen, Sodium, Hydrogen, Helium, Potassium)",
+    "funFacts": [
+      "Mercury has wrinkles.",
+      "A year on Mercury is just 88 Earth days.",
+      "It is the second hottest planet, despite being closest to the Sun."
+    ]
+  },
+  {
+    "id": "venus",
+    "name": "Venus",
+    "shortDescription": "Venus is the second planet from the Sun.",
+    "detailedDescription": "Venus is the second planet from the Sun. It is named after the Roman goddess of love and beauty.",
+    "diameterKm": 12104,
+    "massKg": "4.867 × 10^24",
+    "distanceFromSunKm": 108200000,
+    "orbitalPeriodDays": 225,
+    "rotationPeriodHours": 5832.5,
+    "gravityMs2": 8.87,
+    "averageTemperatureC": 464,
+    "numberOfMoons": 0,
+    "atmosphere": "Thick (Carbon Dioxide, Nitrogen)",
+    "funFacts": [
+      "Venus spins in the opposite direction to most planets.",
+      "It is the hottest planet in our solar system.",
+      "A day on Venus is longer than a year on Venus."
+    ]
+  },
+  {
+    "id": "earth",
+    "name": "Earth",
+    "shortDescription": "Earth is the third planet from the Sun.",
+    "detailedDescription": "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
+    "diameterKm": 12742,
+    "massKg": "5.972 × 10^24",
+    "distanceFromSunKm": 149600000,
+    "orbitalPeriodDays": 365.25,
+    "rotationPeriodHours": 24,
+    "gravityMs2": 9.8,
+    "averageTemperatureC": 15,
+    "numberOfMoons": 1,
+    "atmosphere": "Nitrogen, Oxygen, Argon",
+    "funFacts": [
+      "Earth is the only planet not named after a god.",
+      "The Earth is the densest planet in the Solar System.",
+      "70% of the Earth's surface is covered in water."
+    ]
+  },
+  {
+    "id": "mars",
+    "name": "Mars",
+    "shortDescription": "Mars is the fourth planet from the Sun.",
+    "detailedDescription": "Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, being larger than only Mercury.",
+    "diameterKm": 6779,
+    "massKg": "6.39 × 10^23",
+    "distanceFromSunKm": 227900000,
+    "orbitalPeriodDays": 687,
+    "rotationPeriodHours": 24.6,
+    "gravityMs2": 3.71,
+    "averageTemperatureC": -65,
+    "numberOfMoons": 2,
+    "atmosphere": "Carbon Dioxide, Argon, Nitrogen",
+    "funFacts": [
+      "Mars is known as the Red Planet.",
+      "Mars has the largest dust storms in the solar system.",
+      "Sunsets on Mars are blue."
+    ]
+  },
+  {
+    "id": "jupiter",
+    "name": "Jupiter",
+    "shortDescription": "Jupiter is the fifth planet from the Sun and the largest in the Solar System.",
+    "detailedDescription": "Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass one-thousandth that of the Sun.",
+    "diameterKm": 139820,
+    "massKg": "1.898 × 10^27",
+    "distanceFromSunKm": 778500000,
+    "orbitalPeriodDays": 4333,
+    "rotationPeriodHours": 9.9,
+    "gravityMs2": 24.79,
+    "averageTemperatureC": -110,
+    "numberOfMoons": 95,
+    "atmosphere": "Hydrogen, Helium",
+    "funFacts": [
+      "Jupiter has the shortest day of all the planets.",
+      "The Great Red Spot is a huge storm that has raged for at least 350 years.",
+      "Jupiter has a faint ring system."
+    ]
+  },
+  {
+    "id": "saturn",
+    "name": "Saturn",
+    "shortDescription": "Saturn is the sixth planet from the Sun and the second-largest in the Solar System.",
+    "detailedDescription": "Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter. It is a gas giant with an average radius of about nine and a half times that of Earth.",
+    "diameterKm": 116460,
+    "massKg": "5.683 × 10^26",
+    "distanceFromSunKm": 1434000000,
+    "orbitalPeriodDays": 10759,
+    "rotationPeriodHours": 10.7,
+    "gravityMs2": 10.44,
+    "averageTemperatureC": -140,
+    "numberOfMoons": 146,
+    "atmosphere": "Hydrogen, Helium",
+    "funFacts": [
+      "Saturn is the flattest planet.",
+      "Saturn could float in water because it is mostly gas.",
+      "Its rings are made of ice and rock."
+    ]
+  },
+  {
+    "id": "uranus",
+    "name": "Uranus",
+    "shortDescription": "Uranus is the seventh planet from the Sun.",
+    "detailedDescription": "Uranus is the seventh planet from the Sun. Its name is a reference to the Greek god of the sky, Uranus, who, according to Greek mythology, was the great-grandfather of Ares (Mars), grandfather of Zeus (Jupiter) and father of Cronus (Saturn).",
+    "diameterKm": 50724,
+    "massKg": "8.681 × 10^25",
+    "distanceFromSunKm": 2871000000,
+    "orbitalPeriodDays": 30687,
+    "rotationPeriodHours": 17.2,
+    "gravityMs2": 8.69,
+    "averageTemperatureC": -195,
+    "numberOfMoons": 27,
+    "atmosphere": "Hydrogen, Helium, Methane",
+    "funFacts": [
+      "Uranus turns on its axis once every 17 hours, 14 minutes.",
+      "It rotates on its side.",
+      "Uranus is an Ice Giant."
+    ]
+  },
+  {
+    "id": "neptune",
+    "name": "Neptune",
+    "shortDescription": "Neptune is the eighth and farthest-known Solar planet from the Sun.",
+    "detailedDescription": "Neptune is the eighth and farthest-known Solar planet from the Sun. In the Solar System, it is the fourth-largest planet by diameter, the third-most-massive planet, and the densest giant planet.",
+    "diameterKm": 49244,
+    "massKg": "1.024 × 10^26",
+    "distanceFromSunKm": 4495000000,
+    "orbitalPeriodDays": 60190,
+    "rotationPeriodHours": 16.1,
+    "gravityMs2": 11.15,
+    "averageTemperatureC": -200,
+    "numberOfMoons": 14,
+    "atmosphere": "Hydrogen, Helium, Methane",
+    "funFacts": [
+      "Neptune spins on its axis very rapidly.",
+      "It has the strongest winds in the solar system.",
+      "Neptune is the coldest planet in the Solar System."
+    ]
+  },
+  {
+    "id": "pluto",
+    "name": "Pluto",
+    "shortDescription": "Pluto is a dwarf planet in the Kuiper belt.",
+    "detailedDescription": "Pluto is a dwarf planet in the Kuiper belt, a ring of bodies beyond the orbit of Neptune. It was the first and the largest Kuiper belt object to be discovered.",
+    "diameterKm": 2377,
+    "massKg": "1.309 × 10^22",
+    "distanceFromSunKm": 5906000000,
+    "orbitalPeriodDays": 90560,
+    "rotationPeriodHours": 153.3,
+    "gravityMs2": 0.62,
+    "averageTemperatureC": -225,
+    "numberOfMoons": 5,
+    "atmosphere": "Nitrogen, Methane, Carbon Monoxide",
+    "funFacts": [
+      "Pluto is smaller than USA.",
+      "Pluto has a heart shape on its surface.",
+      "It was reclassified as a dwarf planet in 2006."
+    ]
+  }
+]
