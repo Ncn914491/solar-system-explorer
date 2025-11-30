@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../../../core/models/apod_model.dart';
 import '../../../core/services/nasa_api_service.dart';
+import '../../../core/services/apod_cache_service.dart';
 
 /// Main screen for Astronomy Picture of the Day
 class ApodScreen extends StatefulWidget {
@@ -14,7 +15,12 @@ class ApodScreen extends StatefulWidget {
 
 class _ApodScreenState extends State<ApodScreen> {
   final NasaApiService _apiService = NasaApiService();
-  late Future<ApodModel> _apodFuture;
+  final ApodCacheService _cacheService = ApodCacheService();
+  
+  ApodModel? _apodData;
+  bool _isLoading = true;
+  String? _errorMessage;
+  bool _isOfflineMode = false;
 
   @override
   void initState() {
@@ -22,10 +28,49 @@ class _ApodScreenState extends State<ApodScreen> {
     _loadApod();
   }
 
-  void _loadApod() {
+  Future<void> _loadApod() async {
     setState(() {
-      _apodFuture = _apiService.fetchApod();
+      _isLoading = true;
+      _errorMessage = null;
+      _isOfflineMode = false;
     });
+
+    try {
+      // Try to fetch fresh APOD from NASA API
+      final apod = await _apiService.fetchApod();
+      
+      if (mounted) {
+        setState(() {
+          _apodData = apod;
+          _isLoading = false;
+          _isOfflineMode = false;
+        });
+        
+        // Cache the successful result
+        await _cacheService.cacheApodData(apod);
+      }
+    } catch (e) {
+      // Network request failed - try to load from cache
+      final cachedApod = await _cacheService.getCachedApod();
+      
+      if (mounted) {
+        if (cachedApod != null) {
+          // We have cached data - show it with offline indicator
+          setState(() {
+            _apodData = cachedApod;
+            _isLoading = false;
+            _isOfflineMode = true;
+          });
+        } else {
+          // No cache available - show error
+          setState(() {
+            _apodData = null;
+            _isLoading = false;
+            _errorMessage = e.toString();
+          });
+        }
+      }
+    }
   }
 
   @override
@@ -33,28 +78,36 @@ class _ApodScreenState extends State<ApodScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('NASA Picture of the Day'),
+        actions: [
+          if (_apodData != null)
+            IconButton(
+              icon: const Icon(Icons.refresh),
+              onPressed: _loadApod,
+              tooltip: 'Refresh APOD',
+            ),
+        ],
       ),
-      body: FutureBuilder<ApodModel>(
-        future: _apodFuture,
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const _LoadingView();
-          } else if (snapshot.hasError) {
-            return _ErrorView(
-              error: snapshot.error,
-              onRetry: _loadApod,
-            );
-          } else if (snapshot.hasData) {
-            return _ApodContent(
-              apod: snapshot.data!,
-              onRefresh: _loadApod,
-            );
-          } else {
-            return const SizedBox.shrink();
-          }
-        },
-      ),
+      body: _buildBody(),
     );
+  }
+
+  Widget _buildBody() {
+    if (_isLoading) {
+      return const _LoadingView();
+    } else if (_errorMessage != null && _apodData == null) {
+      return _ErrorView(
+        error: _errorMessage,
+        onRetry: _loadApod,
+      );
+    } else if (_apodData != null) {
+      return _ApodContent(
+        apod: _apodData!,
+        onRefresh: _loadApod,
+        isOfflineMode: _isOfflineMode,
+      );
+    } else {
+      return const SizedBox.shrink();
+    }
   }
 }
 
@@ -133,8 +186,13 @@ class _ErrorView extends StatelessWidget {
 class _ApodContent extends StatelessWidget {
   final ApodModel apod;
   final VoidCallback onRefresh;
+  final bool isOfflineMode;
 
-  const _ApodContent({required this.apod, required this.onRefresh});
+  const _ApodContent({
+    required this.apod,
+    required this.onRefresh,
+    this.isOfflineMode = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -149,6 +207,31 @@ class _ApodContent extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              // Offline mode indicator
+              if (isOfflineMode)
+                Container(
+                  margin: const EdgeInsets.only(bottom: 16),
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: Colors.orange.withValues(alpha: 0.2),
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: Colors.orange.withValues(alpha: 0.5)),
+                  ),
+                  child: Row(
+                    children: [
+                      const Icon(Icons.cloud_off, color: Colors.orange, size: 20),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: Text(
+                          'Offline Mode: Showing last saved APOD',
+                          style: theme.textTheme.bodyMedium?.copyWith(
+                            color: Colors.orange.withValues(alpha: 0.9),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               // Title
               Text(
                 apod.title,

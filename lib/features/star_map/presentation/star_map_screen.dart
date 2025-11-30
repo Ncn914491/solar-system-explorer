@@ -104,42 +104,19 @@ class _StarMapScreenState extends State<StarMapScreen> {
 
             final stars = snapshot.data!;
 
-            return Stack(
-              children: [
-                // Interactive star map
-                InteractiveStarMap(
-                  stars: stars,
-                  onStarTapped: (star) {
-                    setState(() {
-                      _selectedStar = star;
-                    });
-                  },
-                ),
-                
-                // Star details card (when a star is selected)
-                if (_selectedStar != null)
-                  Positioned(
-                    bottom: 20,
-                    left: 20,
-                    right: 20,
-                    child: _StarDetailsCard(
-                      star: _selectedStar!,
-                      onClose: () {
-                        setState(() {
-                          _selectedStar = null;
-                        });
-                      },
-                    ),
-                  ),
-                
-                // Instructions overlay (top)
-                Positioned(
-                  top: 100,
-                  left: 20,
-                  right: 20,
-                  child: _InstructionsOverlay(),
-                ),
-              ],
+            return _StarMapView(
+              stars: stars,
+              selectedStar: _selectedStar,
+              onStarSelected: (star) {
+                setState(() {
+                  _selectedStar = star;
+                });
+              },
+              onStarDeselected: () {
+                setState(() {
+                  _selectedStar = null;
+                });
+              },
             );
           },
         ),
@@ -188,14 +165,135 @@ class _StarMapScreenState extends State<StarMapScreen> {
   }
 }
 
+/// Wrapper widget that contains the interactive star map and all controls
+class _StarMapView extends StatefulWidget {
+  final List<Star> stars;
+  final Star? selectedStar;
+  final Function(Star) onStarSelected;
+  final VoidCallback onStarDeselected;
+
+  const _StarMapView({
+    required this.stars,
+    required this.selectedStar,
+    required this.onStarSelected,
+    required this.onStarDeselected,
+  });
+
+  @override
+  State<_StarMapView> createState() => _StarMapViewState();
+}
+
+class _StarMapViewState extends State<_StarMapView> {
+  double _scale = 1.0;
+  Offset _offset = Offset.zero;
+
+  void _resetView() {
+    setState(() {
+      _scale = 1.0;
+      _offset = Offset.zero;
+    });
+  }
+
+  void _updateTransform(double scale, Offset offset) {
+    setState(() {
+      _scale = scale;
+      _offset = offset;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        // Interactive star map
+        InteractiveStarMap(
+          stars: widget.stars,
+          onStarTapped: widget.onStarSelected,
+          scale: _scale,
+          offset: _offset,
+          onTransformChanged: _updateTransform,
+        ),
+        
+        // star details card (when a star is selected)
+        if (widget.selectedStar != null)
+          Positioned(
+            bottom: 20,
+            left: 20,
+            right: 20,
+            child: _StarDetailsCard(
+              star: widget.selectedStar!,
+              onClose: widget.onStarDeselected,
+            ),
+          ),
+        
+        // Instructions overlay (top)
+        Positioned(
+          top: 100,
+          left: 20,
+          right: 20,
+          child: _InstructionsOverlay(),
+        ),
+
+        // Zoom indicator and reset button (bottom right)
+        Positioned(
+          bottom: widget.selectedStar != null ? 180 : 20,
+          right: 20,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              // Zoom indicator
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                decoration: BoxDecoration(
+                  color: Colors.black.withValues(alpha: 0.7),
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(color: Colors.white24),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Icon(Icons.zoom_in, size: 16, color: Colors.white70),
+                    const SizedBox(width: 8),
+                    Text(
+                      '${(_scale * 100).toInt()}%',
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 12),
+              // Reset view button
+              FloatingActionButton.small(
+                onPressed: _resetView,
+                backgroundColor: Colors.black.withValues(alpha: 0.7),
+                child: const Icon(Icons.restart_alt, color: Colors.white),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
 class InteractiveStarMap extends StatefulWidget {
   final List<Star> stars;
   final Function(Star) onStarTapped;
+  final double scale;
+  final Offset offset;
+  final Function(double, Offset) onTransformChanged;
 
   const InteractiveStarMap({
     super.key,
     required this.stars,
     required this.onStarTapped,
+    required this.scale,
+    required this.offset,
+    required this.onTransformChanged,
   });
 
   @override
@@ -203,8 +301,6 @@ class InteractiveStarMap extends StatefulWidget {
 }
 
 class _InteractiveStarMapState extends State<InteractiveStarMap> {
-  double _scale = 1.0;
-  Offset _offset = Offset.zero;
   Offset _lastFocalPoint = Offset.zero;
 
   @override
@@ -214,22 +310,19 @@ class _InteractiveStarMapState extends State<InteractiveStarMap> {
         _lastFocalPoint = details.focalPoint;
       },
       onScaleUpdate: (details) {
-        setState(() {
-          // Update scale
-          _scale = (_scale * details.scale).clamp(0.5, 5.0);
-          
-          // Update offset for panning
-          final delta = details.focalPoint - _lastFocalPoint;
-          _offset += delta;
-          _lastFocalPoint = details.focalPoint;
-        });
+        // Update scale
+        final newScale = (widget.scale * details.scale).clamp(0.5, 5.0);
+        
+        // Update offset for panning
+        final delta = details.focalPoint - _lastFocalPoint;
+        final newOffset = widget.offset + delta;
+        _lastFocalPoint = details.focalPoint;
+
+        widget.onTransformChanged(newScale, newOffset);
       },
       onDoubleTap: () {
         // Recenter on double tap
-        setState(() {
-          _scale = 1.0;
-          _offset = Offset.zero;
-        });
+        widget.onTransformChanged(1.0, Offset.zero);
       },
       onTapUp: (details) {
         // Detect tap on star
@@ -239,8 +332,8 @@ class _InteractiveStarMapState extends State<InteractiveStarMap> {
       child: CustomPaint(
         painter: StarMapPainter(
           stars: widget.stars,
-          scale: _scale,
-          offset: _offset,
+          scale: widget.scale,
+          offset: widget.offset,
         ),
         size: Size.infinite,
       ),
@@ -256,7 +349,7 @@ class _InteractiveStarMapState extends State<InteractiveStarMap> {
 
     for (final star in widget.stars) {
       final starPos = _raDecToScreen(star.ra, star.dec, size);
-      final transformedPos = (starPos * _scale) + _offset;
+      final transformedPos = (starPos * widget.scale) + widget.offset;
       
       final distance = (transformedPos - tapPosition).distance;
       
