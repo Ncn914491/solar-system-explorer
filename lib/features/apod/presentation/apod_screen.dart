@@ -243,18 +243,88 @@ class _MediaCard extends StatefulWidget {
 }
 
 class _MediaCardState extends State<_MediaCard> {
-  bool _useProxy = false;
+  late bool _imageError;
+  
+  @override
+  void initState() {
+    super.initState();
+    _imageError = false;
+  }
+
+  String _getImageUrl() {
+    // On web, always use CORS proxy to avoid CORS issues
+    if (kIsWeb && widget.apod.mediaType == 'image') {
+      // Use AllOrigins CORS proxy which is more reliable
+      return 'https://api.allorigins.win/raw?url=${Uri.encodeComponent(widget.apod.url)}';
+    }
+    return widget.apod.url;
+  }
 
   @override
   Widget build(BuildContext context) {
     final isImage = widget.apod.mediaType == 'image';
     
-    // Determine which URL to use
-    String imageUrl = widget.apod.url;
-    
-    // On web, use proxy if needed
-    if (kIsWeb && isImage && _useProxy) {
-      imageUrl = 'https://corsproxy.io/?${Uri.encodeComponent(widget.apod.url)}';
+    if (_imageError) {
+      // Show error state with link to original image
+      return Card(
+        clipBehavior: Clip.antiAlias,
+        elevation: 8,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        child: Container(
+          height: 300,
+          padding: const EdgeInsets.all(24),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Colors.deepPurple.withValues(alpha: 0.2),
+                Colors.indigo.withValues(alpha: 0.3),
+              ],
+            ),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Icon(Icons.image, size: 64, color: Colors.white70),
+              const SizedBox(height: 16),
+              const Text(
+                'Image Preview Unavailable',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 8),
+              Text(
+                widget.apod.title,
+                style: const TextStyle(
+                  fontSize: 14,
+                  color: Colors.white70,
+                ),
+                textAlign: TextAlign.center,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
+              const SizedBox(height: 16),
+              ElevatedButton.icon(
+                onPressed: () {
+                  // Try to open in new tab/browser
+                  debugPrint('Open URL: ${widget.apod.url}');
+                },
+                icon: const Icon(Icons.open_in_new, size: 18),
+                label: const Text('View Original Image'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.deepPurple,
+                  foregroundColor: Colors.white,
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
     }
 
     return Card(
@@ -263,7 +333,7 @@ class _MediaCardState extends State<_MediaCard> {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       child: isImage
           ? Image.network(
-              imageUrl,
+              _getImageUrl(),
               fit: BoxFit.cover,
               loadingBuilder: (context, child, loadingProgress) {
                 if (loadingProgress == null) return child;
@@ -271,54 +341,41 @@ class _MediaCardState extends State<_MediaCard> {
                   height: 300,
                   color: Colors.black26,
                   child: Center(
-                    child: CircularProgressIndicator(
-                      value: loadingProgress.expectedTotalBytes != null
-                          ? loadingProgress.cumulativeBytesLoaded /
-                              loadingProgress.expectedTotalBytes!
-                          : null,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        CircularProgressIndicator(
+                          value: loadingProgress.expectedTotalBytes != null
+                              ? loadingProgress.cumulativeBytesLoaded /
+                                  loadingProgress.expectedTotalBytes!
+                              : null,
+                        ),
+                        const SizedBox(height: 16),
+                        const Text(
+                          'Loading image...',
+                          style: TextStyle(color: Colors.white70),
+                        ),
+                      ],
                     ),
                   ),
                 );
               },
               errorBuilder: (context, error, stackTrace) {
-                debugPrint('Image load error: $error');
-                // If we haven't tried the proxy yet and we're on web, retry with proxy
-                if (kIsWeb && !_useProxy && isImage) {
-                  WidgetsBinding.instance.addPostFrameCallback((_) {
-                    if (mounted) {
-                      setState(() {
-                        _useProxy = true;
-                      });
-                    }
-                  });
-                }
+                debugPrint('APOD Image load error: $error');
+                // Set error state to show fallback UI
+                WidgetsBinding.instance.addPostFrameCallback((_) {
+                  if (mounted && !_imageError) {
+                    setState(() {
+                      _imageError = true;
+                    });
+                  }
+                });
                 
                 return Container(
-                  height: 200,
+                  height: 300,
                   color: Colors.black26,
-                  child: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Icon(Icons.broken_image, size: 48, color: Colors.grey),
-                        const SizedBox(height: 8),
-                        Text(
-                          _useProxy ? 'Failed to load image' : 'Loading...',
-                          style: const TextStyle(color: Colors.grey),
-                        ),
-                        if (_useProxy)
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              'Error: $error',
-                              style: const TextStyle(color: Colors.red, fontSize: 10),
-                              textAlign: TextAlign.center,
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                      ],
-                    ),
+                  child: const Center(
+                    child: CircularProgressIndicator(),
                   ),
                 );
               },
