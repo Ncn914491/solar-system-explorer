@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../apod/presentation/apod_screen.dart';
 import '../../planets/presentation/planet_list_screen.dart';
 import '../../constellations/presentation/constellation_list_screen.dart';
+import '../../star_map/presentation/star_map_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -17,6 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
     const ApodScreen(),
     const PlanetListScreen(),
     const ConstellationListScreen(),
+    const StarMapScreen(),
   ];
 
   @override
@@ -43,8 +45,12 @@ class _HomeScreenState extends State<HomeScreen> {
             label: 'Planets',
           ),
           NavigationDestination(
-            icon: Icon(Icons.star),
+            icon: Icon(Icons.stars),
             label: 'Constellations',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.map),
+            label: 'Star Map',
           ),
         ],
       ),

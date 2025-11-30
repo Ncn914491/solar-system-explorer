@@ -1,0 +1,955 @@
+[
+    {
+        "id": 1,
+        "name": "Sirius",
+        "ra": 101.2875,
+        "dec": -16.7161,
+        "magnitude": -1.46,
+        "spectralType": "A1V",
+        "constellation": "Canis Major",
+        "distanceLightYears": 8.6
+    },
+    {
+        "id": 2,
+        "name": "Canopus",
+        "ra": 95.9878,
+        "dec": -52.6956,
+        "magnitude": -0.74,
+        "spectralType": "A9II",
+        "constellation": "Carina",
+        "distanceLightYears": 310
+    },
+    {
+        "id": 3,
+        "name": "Arcturus",
+        "ra": 213.9153,
+        "dec": 19.1824,
+        "magnitude": -0.05,
+        "spectralType": "K0III",
+        "constellation": "Boötes",
+        "distanceLightYears": 37
+    },
+    {
+        "id": 4,
+        "name": "Alpha Centauri A",
+        "ra": 219.9021,
+        "dec": -60.8339,
+        "magnitude": -0.01,
+        "spectralType": "G2V",
+        "constellation": "Centaurus",
+        "distanceLightYears": 4.4
+    },
+    {
+        "id": 5,
+        "name": "Vega",
+        "ra": 279.2347,
+        "dec": 38.7836,
+        "magnitude": 0.03,
+        "spectralType": "A0V",
+        "constellation": "Lyra",
+        "distanceLightYears": 25
+    },
+    {
+        "id": 6,
+        "name": "Capella",
+        "ra": 79.1722,
+        "dec": 45.9980,
+        "magnitude": 0.08,
+        "spectralType": "G5III",
+        "constellation": "Auriga",
+        "distanceLightYears": 43
+    },
+    {
+        "id": 7,
+        "name": "Rigel",
+        "ra": 78.6344,
+        "dec": -8.2016,
+        "magnitude": 0.13,
+        "spectralType": "B8Ia",
+        "constellation": "Orion",
+        "distanceLightYears": 860
+    },
+    {
+        "id": 8,
+        "name": "Procyon",
+        "ra": 114.8253,
+        "dec": 5.2247,
+        "magnitude": 0.34,
+        "spectralType": "F5IV",
+        "constellation": "Canis Minor",
+        "distanceLightYears": 11.5
+    },
+    {
+        "id": 9,
+        "name": "Achernar",
+        "ra": 24.4286,
+        "dec": -57.2367,
+        "magnitude": 0.46,
+        "spectralType": "B6V",
+        "constellation": "Eridanus",
+        "distanceLightYears": 139
+    },
+    {
+        "id": 10,
+        "name": "Betelgeuse",
+        "ra": 88.7929,
+        "dec": 7.4070,
+        "magnitude": 0.50,
+        "spectralType": "M2Iab",
+        "constellation": "Orion",
+        "distanceLightYears": 640
+    },
+    {
+        "id": 11,
+        "name": "Hadar",
+        "ra": 210.9559,
+        "dec": -60.3730,
+        "magnitude": 0.61,
+        "spectralType": "B1III",
+        "constellation": "Centaurus",
+        "distanceLightYears": 390
+    },
+    {
+        "id": 12,
+        "name": "Altair",
+        "ra": 297.6958,
+        "dec": 8.8683,
+        "magnitude": 0.76,
+        "spectralType": "A7V",
+        "constellation": "Aquila",
+        "distanceLightYears": 17
+    },
+    {
+        "id": 13,
+        "name": "Aldebaran",
+        "ra": 68.9801,
+        "dec": 16.5092,
+        "magnitude": 0.85,
+        "spectralType": "K5III",
+        "constellation": "Taurus",
+        "distanceLightYears": 65
+    },
+    {
+        "id": 14,
+        "name": "Spica",
+        "ra": 201.2983,
+        "dec": -11.1613,
+        "magnitude": 0.98,
+        "spectralType": "B1V",
+        "constellation": "Virgo",
+        "distanceLightYears": 250
+    },
+    {
+        "id": 15,
+        "name": "Antares",
+        "ra": 247.3519,
+        "dec": -26.4319,
+        "magnitude": 1.06,
+        "spectralType": "M1Ib",
+        "constellation": "Scorpius",
+        "distanceLightYears": 550
+    },
+    {
+        "id": 16,
+        "name": "Pollux",
+        "ra": 116.3289,
+        "dec": 28.0262,
+        "magnitude": 1.14,
+        "spectralType": "K0III",
+        "constellation": "Gemini",
+        "distanceLightYears": 34
+    },
+    {
+        "id": 17,
+        "name": "Fomalhaut",
+        "ra": 344.4127,
+        "dec": -29.6221,
+        "magnitude": 1.16,
+        "spectralType": "A3V",
+        "constellation": "Piscis Austrinus",
+        "distanceLightYears": 25
+    },
+    {
+        "id": 18,
+        "name": "Deneb",
+        "ra": 310.3580,
+        "dec": 45.2803,
+        "magnitude": 1.25,
+        "spectralType": "A2Ia",
+        "constellation": "Cygnus",
+        "distanceLightYears": 2600
+    },
+    {
+        "id": 19,
+        "name": "Mimosa",
+        "ra": 191.9303,
+        "dec": -59.6889,
+        "magnitude": 1.25,
+        "spectralType": "B0III",
+        "constellation": "Crux",
+        "distanceLightYears": 280
+    },
+    {
+        "id": 20,
+        "name": "Regulus",
+        "ra": 152.0929,
+        "dec": 11.9671,
+        "magnitude": 1.35,
+        "spectralType": "B7V",
+        "constellation": "Leo",
+        "distanceLightYears": 79
+    },
+    {
+        "id": 21,
+        "name": "Adhara",
+        "ra": 104.6564,
+        "dec": -28.9721,
+        "magnitude": 1.50,
+        "spectralType": "B2II",
+        "constellation": "Canis Major",
+        "distanceLightYears": 430
+    },
+    {
+        "id": 22,
+        "name": "Castor",
+        "ra": 113.6494,
+        "dec": 31.8883,
+        "magnitude": 1.58,
+        "spectralType": "A1V",
+        "constellation": "Gemini",
+        "distanceLightYears": 51
+    },
+    {
+        "id": 23,
+        "name": "Shaula",
+        "ra": 263.4021,
+        "dec": -37.1038,
+        "magnitude": 1.63,
+        "spectralType": "B2IV",
+        "constellation": "Scorpius",
+        "distanceLightYears": 700
+    },
+    {
+        "id": 24,
+        "name": "Bellatrix",
+        "ra": 81.2828,
+        "dec": 6.3498,
+        "magnitude": 1.64,
+        "spectralType": "B2III",
+        "constellation": "Orion",
+        "distanceLightYears": 240
+    },
+    {
+        "id": 25,
+        "name": "Elnath",
+        "ra": 81.5729,
+        "dec": 28.6074,
+        "magnitude": 1.65,
+        "spectralType": "B7III",
+        "constellation": "Taurus",
+        "distanceLightYears": 130
+    },
+    {
+        "id": 26,
+        "name": "Miaplacidus",
+        "ra": 138.2999,
+        "dec": -69.7172,
+        "magnitude": 1.68,
+        "spectralType": "A2IV",
+        "constellation": "Carina"
+    },
+    {
+        "id": 27,
+        "name": "Alnilam",
+        "ra": 84.0533,
+        "dec": -1.2019,
+        "magnitude": 1.69,
+        "spectralType": "B0Ia",
+        "constellation": "Orion",
+        "distanceLightYears": 2000
+    },
+    {
+        "id": 28,
+        "name": "Alnair",
+        "ra": 332.0583,
+        "dec": -46.9608,
+        "magnitude": 1.73,
+        "spectralType": "B7IV",
+        "constellation": "Grus",
+        "distanceLightYears": 100
+    },
+    {
+        "id": 29,
+        "name": "Alnitak",
+        "ra": 85.1897,
+        "dec": -1.9425,
+        "magnitude": 1.74,
+        "spectralType": "O9Ib",
+        "constellation": "Orion",
+        "distanceLightYears": 1260
+    },
+    {
+        "id": 30,
+        "name": "Alioth",
+        "ra": 193.5073,
+        "dec": 55.9598,
+        "magnitude": 1.76,
+        "spectralType": "A0V",
+        "constellation": "Ursa Major",
+        "distanceLightYears": 81
+    },
+    {
+        "id": 31,
+        "name": "Dubhe",
+        "ra": 165.9319,
+        "dec": 61.7508,
+        "magnitude": 1.79,
+        "spectralType": "K0III",
+        "constellation": "Ursa Major",
+        "distanceLightYears": 123
+    },
+    {
+        "id": 32,
+        "name": "Mirfak",
+        "ra": 51.0807,
+        "dec": 49.8611,
+        "magnitude": 1.79,
+        "spectralType": "F5Ib",
+        "constellation": "Perseus",
+        "distanceLightYears": 590
+    },
+    {
+        "id": 33,
+        "name": "Wezen",
+        "ra": 107.0978,
+        "dec": -26.3932,
+        "magnitude": 1.83,
+        "spectralType": "F8Ia",
+        "constellation": "Canis Major"
+    },
+    {
+        "id": 34,
+        "name": "Kaus Australis",
+        "ra": 276.0428,
+        "dec": -34.3846,
+        "magnitude": 1.85,
+        "spectralType": "B9.5III",
+        "constellation": "Sagittarius",
+        "distanceLightYears": 140
+    },
+    {
+        "id": 35,
+        "name": "Alkaid",
+        "ra": 206.8852,
+        "dec": 49.3133,
+        "magnitude": 1.86,
+        "spectralType": "B3V",
+        "constellation": "Ursa Major",
+        "distanceLightYears": 104
+    },
+    {
+        "id": 36,
+        "name": "Sargas",
+        "ra": 265.6208,
+        "dec": -42.9978,
+        "magnitude": 1.87,
+        "spectralType": "F0II",
+        "constellation": "Scorpius",
+        "distanceLightYears": 270
+    },
+    {
+        "id": 37,
+        "name": "Avior",
+        "ra": 125.6285,
+        "dec": -59.5097,
+        "magnitude": 1.86,
+        "spectralType": "K3III",
+        "constellation": "Carina"
+    },
+    {
+        "id": 38,
+        "name": "Menkalinan",
+        "ra": 89.8822,
+        "dec": 44.9475,
+        "magnitude": 1.90,
+        "spectralType": "A2IV",
+        "constellation": "Auriga",
+        "distanceLightYears": 81
+    },
+    {
+        "id": 39,
+        "name": "Atria",
+        "ra": 253.0838,
+        "dec": -69.0277,
+        "magnitude": 1.91,
+        "spectralType": "K2Ib",
+        "constellation": "Triangulum Australe"
+    },
+    {
+        "id": 40,
+        "name": "Alhena",
+        "ra": 99.4280,
+        "dec": 16.3993,
+        "magnitude": 1.93,
+        "spectralType": "A0IV",
+        "constellation": "Gemini",
+        "distanceLightYears": 105
+    },
+    {
+        "id": 41,
+        "name": "Peacock",
+        "ra": 306.4119,
+        "dec": -56.7350,
+        "magnitude": 1.94,
+        "spectralType": "B3V",
+        "constellation": "Pavo",
+        "distanceLightYears": 180
+    },
+    {
+        "id": 42,
+        "name": "Polaris",
+        "ra": 37.9547,
+        "dec": 89.2642,
+        "magnitude": 1.98,
+        "spectralType": "F7Ib",
+        "constellation": "Ursa Minor",
+        "distanceLightYears": 430
+    },
+    {
+        "id": 43,
+        "name": "Mirzam",
+        "ra": 95.6748,
+        "dec": -17.9559,
+        "magnitude": 1.98,
+        "spectralType": "B1III",
+        "constellation": "Canis Major"
+    },
+    {
+        "id": 44,
+        "name": "Alphard",
+        "ra": 141.8968,
+        "dec": -8.6586,
+        "magnitude": 2.00,
+        "spectralType": "K3III",
+        "constellation": "Hydra",
+        "distanceLightYears": 180
+    },
+    {
+        "id": 45,
+        "name": "Hamal",
+        "ra": 31.7933,
+        "dec": 23.4624,
+        "magnitude": 2.00,
+        "spectralType": "K2III",
+        "constellation": "Aries",
+        "distanceLightYears": 66
+    },
+    {
+        "id": 46,
+        "name": "Algieba",
+        "ra": 154.9931,
+        "dec": 19.8415,
+        "magnitude": 2.08,
+        "spectralType": "K0III",
+        "constellation": "Leo",
+        "distanceLightYears": 130
+    },
+    {
+        "id": 47,
+        "name": "Diphda",
+        "ra": 10.8974,
+        "dec": -17.9866,
+        "magnitude": 2.04,
+        "spectralType": "K0III",
+        "constellation": "Cetus",
+        "distanceLightYears": 96
+    },
+    {
+        "id": 48,
+        "name": "Mizar",
+        "ra": 200.9814,
+        "dec": 54.9254,
+        "magnitude": 2.04,
+        "spectralType": "A2V",
+        "constellation": "Ursa Major",
+        "distanceLightYears": 83
+    },
+    {
+        "id": 49,
+        "name": "Nunki",
+        "ra": 283.8163,
+        "dec": -26.2967,
+        "magnitude": 2.05,
+        "spectralType": "B2V",
+        "constellation": "Sagittarius",
+        "distanceLightYears": 228
+    },
+    {
+        "id": 50,
+        "name": "Alpheratz",
+        "ra": 2.0970,
+        "dec": 29.0905,
+        "magnitude": 2.06,
+        "spectralType": "B9IV",
+        "constellation": "Andromeda",
+        "distanceLightYears": 97
+    },
+    {
+        "id": 51,
+        "name": "",
+        "ra": 15.5,
+        "dec": 45.2,
+        "magnitude": 3.2,
+        "spectralType": "G5V",
+        "constellation": "Andromeda"
+    },
+    {
+        "id": 52,
+        "name": "",
+        "ra": 30.8,
+        "dec": -12.4,
+        "magnitude": 3.5,
+        "spectralType": "K2III",
+        "constellation": "Cetus"
+    },
+    {
+        "id": 53,
+        "name": "",
+        "ra": 45.3,
+        "dec": 60.1,
+        "magnitude": 3.8,
+        "spectralType": "A0V",
+        "constellation": "Perseus"
+    },
+    {
+        "id": 54,
+        "name": "",
+        "ra": 62.7,
+        "dec": 22.5,
+        "magnitude": 4.1,
+        "spectralType": "F5V",
+        "constellation": "Taurus"
+    },
+    {
+        "id": 55,
+        "name": "",
+        "ra": 78.9,
+        "dec": -5.3,
+        "magnitude": 3.6,
+        "spectralType": "B2V",
+        "constellation": "Orion"
+    },
+    {
+        "id": 56,
+        "name": "",
+        "ra": 92.4,
+        "dec": -25.7,
+        "magnitude": 4.3,
+        "spectralType": "A5V",
+        "constellation": "Canis Major"
+    },
+    {
+        "id": 57,
+        "name": "",
+        "ra": 105.6,
+        "dec": 15.8,
+        "magnitude": 3.9,
+        "spectralType": "G0V",
+        "constellation": "Cancer"
+    },
+    {
+        "id": 58,
+        "name": "",
+        "ra": 120.3,
+        "dec": 35.4,
+        "magnitude": 4.5,
+        "spectralType": "K0III",
+        "constellation": "Gemini"
+    },
+    {
+        "id": 59,
+        "name": "",
+        "ra": 135.8,
+        "dec": -18.2,
+        "magnitude": 3.7,
+        "spectralType": "F0V",
+        "constellation": "Hydra"
+    },
+    {
+        "id": 60,
+        "name": "",
+        "ra": 148.2,
+        "dec": 8.9,
+        "magnitude": 4.2,
+        "spectralType": "A7V",
+        "constellation": "Leo"
+    },
+    {
+        "id": 61,
+        "name": "Denebola",
+        "ra": 177.2649,
+        "dec": 14.5721,
+        "magnitude": 2.14,
+        "spectralType": "A3V",
+        "constellation": "Leo",
+        "distanceLightYears": 36
+    },
+    {
+        "id": 62,
+        "name": "Mirach",
+        "ra": 17.4332,
+        "dec": 35.6206,
+        "magnitude": 2.07,
+        "spectralType": "M0III",
+        "constellation": "Andromeda",
+        "distanceLightYears": 200
+    },
+    {
+        "id": 63,
+        "name": "",
+        "ra": 165.4,
+        "dec": -22.4,
+        "magnitude": 4.0,
+        "spectralType": "G5III",
+        "constellation": "Corvus"
+    },
+    {
+        "id": 64,
+        "name": "",
+        "ra": 180.7,
+        "dec": 48.3,
+        "magnitude": 3.8,
+        "spectralType": "A2V",
+        "constellation": "Ursa Major"
+    },
+    {
+        "id": 65,
+        "name": "",
+        "ra": 195.2,
+        "dec": -5.7,
+        "magnitude": 4.4,
+        "spectralType": "K5III",
+        "constellation": "Virgo"
+    },
+    {
+        "id": 66,
+        "name": "",
+        "ra": 210.8,
+        "dec": 25.6,
+        "magnitude": 3.6,
+        "spectralType": "F8V",
+        "constellation": "Boötes"
+    },
+    {
+        "id": 67,
+        "name": "",
+        "ra": 225.4,
+        "dec": -35.8,
+        "magnitude": 4.1,
+        "spectralType": "B8V",
+        "constellation": "Lupus"
+    },
+    {
+        "id": 68,
+        "name": "",
+        "ra": 240.9,
+        "dec": -18.5,
+        "magnitude": 3.9,
+        "spectralType": "A0III",
+        "constellation": "Libra"
+    },
+    {
+        "id": 69,
+        "name": "",
+        "ra": 255.3,
+        "dec": -42.2,
+        "magnitude": 4.3,
+        "spectralType": "G2V",
+        "constellation": "Scorpius"
+    },
+    {
+        "id": 70,
+        "name": "",
+        "ra": 270.5,
+        "dec": -28.9,
+        "magnitude": 3.7,
+        "spectralType": "K0III",
+        "constellation": "Sagittarius"
+    },
+    {
+        "id": 71,
+        "name": "Kochab",
+        "ra": 222.6765,
+        "dec": 74.1555,
+        "magnitude": 2.08,
+        "spectralType": "K4III",
+        "constellation": "Ursa Minor",
+        "distanceLightYears": 130
+    },
+    {
+        "id": 72,
+        "name": "Rasalhague",
+        "ra": 263.7337,
+        "dec": 12.5601,
+        "magnitude": 2.08,
+        "spectralType": "A5V",
+        "constellation": "Ophiuchus",
+        "distanceLightYears": 47
+    },
+    {
+        "id": 73,
+        "name": "",
+        "ra": 285.7,
+        "dec": 8.4,
+        "magnitude": 4.2,
+        "spectralType": "F5V",
+        "constellation": "Aquila"
+    },
+    {
+        "id": 74,
+        "name": "",
+        "ra": 300.2,
+        "dec": 52.7,
+        "magnitude": 3.8,
+        "spectralType": "A7V",
+        "constellation": "Cygnus"
+    },
+    {
+        "id": 75,
+        "name": "",
+        "ra": 315.6,
+        "dec": -8.3,
+        "magnitude": 4.0,
+        "spectralType": "G0V",
+        "constellation": "Aquarius"
+    },
+    {
+        "id": 76,
+        "name": "",
+        "ra": 330.8,
+        "dec": -45.6,
+        "magnitude": 3.6,
+        "spectralType": "B5V",
+        "constellation": "Grus"
+    },
+    {
+        "id": 77,
+        "name": "",
+        "ra": 345.3,
+        "dec": 18.2,
+        "magnitude": 4.5,
+        "spectralType": "K2III",
+        "constellation": "Pisces"
+    },
+    {
+        "id": 78,
+        "name": "",
+        "ra": 358.9,
+        "dec": -28.7,
+        "magnitude": 3.9,
+        "spectralType": "A0V",
+        "constellation": "Sculptor"
+    },
+    {
+        "id": 79,
+        "name": "Sadr",
+        "ra": 305.5571,
+        "dec": 40.2567,
+        "magnitude": 2.23,
+        "spectralType": "F8Ib",
+        "constellation": "Cygnus",
+        "distanceLightYears": 1800
+    },
+    {
+        "id": 80,
+        "name": "Schedar",
+        "ra": 10.1265,
+        "dec": 56.5374,
+        "magnitude": 2.24,
+        "spectralType": "K0III",
+        "constellation": "Cassiopeia",
+        "distanceLightYears": 230
+    },
+    {
+        "id": 81,
+        "name": "",
+        "ra": 12.4,
+        "dec": 38.5,
+        "magnitude": 4.3,
+        "spectralType": "F0V",
+        "constellation": "Andromeda"
+    },
+    {
+        "id": 82,
+        "name": "",
+        "ra": 25.7,
+        "dec": -52.8,
+        "magnitude": 3.7,
+        "spectralType": "B3V",
+        "constellation": "Eridanus"
+    },
+    {
+        "id": 83,
+        "name": "",
+        "ra": 40.2,
+        "dec": 15.3,
+        "magnitude": 4.1,
+        "spectralType": "G5V",
+        "constellation": "Aries"
+    },
+    {
+        "id": 84,
+        "name": "",
+        "ra": 55.8,
+        "dec": 48.6,
+        "magnitude": 3.8,
+        "spectralType": "A2V",
+        "constellation": "Perseus"
+    },
+    {
+        "id": 85,
+        "name": "",
+        "ra": 70.3,
+        "dec": 18.9,
+        "magnitude": 4.4,
+        "spectralType": "K0III",
+        "constellation": "Taurus"
+    },
+    {
+        "id": 86,
+        "name": "",
+        "ra": 85.9,
+        "dec": -8.5,
+        "magnitude": 3.6,
+        "spectralType": "B1V",
+        "constellation": "Orion"
+    },
+    {
+        "id": 87,
+        "name": "",
+        "ra": 100.5,
+        "dec": -30.7,
+        "magnitude": 4.2,
+        "spectralType": "A5V",
+        "constellation": "Canis Major"
+    },
+    {
+        "id": 88,
+        "name": "",
+        "ra": 115.2,
+        "dec": 12.4,
+        "magnitude": 3.9,
+        "spectralType": "F8V",
+        "constellation": "Cancer"
+    },
+    {
+        "id": 89,
+        "name": "",
+        "ra": 130.7,
+        "dec": 32.1,
+        "magnitude": 4.5,
+        "spectralType": "G0V",
+        "constellation": "Gemini"
+    },
+    {
+        "id": 90,
+        "name": "",
+        "ra": 145.3,
+        "dec": -22.6,
+        "magnitude": 3.7,
+        "spectralType": "K5III",
+        "constellation": "Hydra"
+    },
+    {
+        "id": 91,
+        "name": "Merak",
+        "ra": 165.4603,
+        "dec": 56.3824,
+        "magnitude": 2.34,
+        "spectralType": "A1V",
+        "constellation": "Ursa Major",
+        "distanceLightYears": 79
+    },
+    {
+        "id": 92,
+        "name": "Ankaa",
+        "ra": 6.5708,
+        "dec": -42.3060,
+        "magnitude": 2.39,
+        "spectralType": "K0III",
+        "constellation": "Phoenix",
+        "distanceLightYears": 77
+    },
+    {
+        "id": 93,
+        "name": "",
+        "ra": 160.8,
+        "dec": 6.8,
+        "magnitude": 4.0,
+        "spectralType": "A7V",
+        "constellation": "Leo"
+    },
+    {
+        "id": 94,
+        "name": "",
+        "ra": 175.4,
+        "dec": 42.5,
+        "magnitude": 3.8,
+        "spectralType": "F5V",
+        "constellation": "Ursa Major"
+    },
+    {
+        "id": 95,
+        "name": "",
+        "ra": 190.2,
+        "dec": -12.3,
+        "magnitude": 4.3,
+        "spectralType": "G2V",
+        "constellation": "Virgo"
+    },
+    {
+        "id": 96,
+        "name": "",
+        "ra": 205.7,
+        "dec": 28.7,
+        "magnitude": 3.6,
+        "spectralType": "K0III",
+        "constellation": "Boötes"
+    },
+    {
+        "id": 97,
+        "name": "",
+        "ra": 220.3,
+        "dec": -58.4,
+        "magnitude": 4.1,
+        "spectralType": "B5V",
+        "constellation": "Centaurus"
+    },
+    {
+        "id": 98,
+        "name": "",
+        "ra": 235.9,
+        "dec": -25.6,
+        "magnitude": 3.9,
+        "spectralType": "A0V",
+        "constellation": "Libra"
+    },
+    {
+        "id": 99,
+        "name": "",
+        "ra": 250.5,
+        "dec": -38.2,
+        "magnitude": 4.4,
+        "spectralType": "F0V",
+        "constellation": "Scorpius"
+    },
+    {
+        "id": 100,
+        "name": "",
+        "ra": 265.2,
+        "dec": -22.8,
+        "magnitude": 3.7,
+        "spectralType": "G5V",
+        "constellation": "Ophiuchus"
+    }
+]
