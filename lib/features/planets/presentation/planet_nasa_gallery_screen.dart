@@ -9,7 +9,8 @@ class PlanetNasaGalleryScreen extends StatefulWidget {
   const PlanetNasaGalleryScreen({super.key, required this.planetName});
 
   @override
-  State<PlanetNasaGalleryScreen> createState() => _PlanetNasaGalleryScreenState();
+  State<PlanetNasaGalleryScreen> createState() =>
+      _PlanetNasaGalleryScreenState();
 }
 
 class _PlanetNasaGalleryScreenState extends State<PlanetNasaGalleryScreen> {
@@ -72,7 +73,8 @@ class _PlanetNasaGalleryScreenState extends State<PlanetNasaGalleryScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Icon(Icons.image_not_supported, size: 48, color: Colors.grey),
+                  const Icon(Icons.image_not_supported,
+                      size: 48, color: Colors.grey),
                   const SizedBox(height: 16),
                   Text(
                     'No images found for ${widget.planetName}',
@@ -181,7 +183,8 @@ class _NasaImageDetailScreenState extends State<_NasaImageDetailScreen> {
     super.initState();
     // If we have a collection URL, try to fetch the original image
     if (widget.image.fullImageUrl != null) {
-      _fullImageFuture = _imageService.getOriginalImageUrl(widget.image.fullImageUrl!);
+      _fullImageFuture =
+          _imageService.getOriginalImageUrl(widget.image.fullImageUrl!);
     } else {
       _fullImageFuture = Future.value(widget.image.thumbnailUrl);
     }
@@ -197,7 +200,7 @@ class _NasaImageDetailScreenState extends State<_NasaImageDetailScreen> {
         future: _fullImageFuture,
         builder: (context, snapshot) {
           final imageUrl = snapshot.data ?? widget.image.thumbnailUrl;
-          
+
           return SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -221,7 +224,8 @@ class _NasaImageDetailScreenState extends State<_NasaImageDetailScreen> {
                     errorWidget: (context, url, error) {
                       return const SizedBox(
                         height: 300,
-                        child: Center(child: Icon(Icons.broken_image, size: 64)),
+                        child:
+                            Center(child: Icon(Icons.broken_image, size: 64)),
                       );
                     },
                   ),
@@ -239,9 +243,10 @@ class _NasaImageDetailScreenState extends State<_NasaImageDetailScreen> {
                         const SizedBox(height: 8),
                         Text(
                           'Date: ${widget.image.dateCreated.toString().split(' ')[0]}',
-                          style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                            color: Colors.white70,
-                          ),
+                          style:
+                              Theme.of(context).textTheme.bodySmall?.copyWith(
+                                    color: Colors.white70,
+                                  ),
                         ),
                       ],
                       const SizedBox(height: 16),

@@ -5,7 +5,9 @@
         "abbreviation": "Ori",
         "hemisphere": "Both",
         "bestViewingMonths": [
-            "January"
+            "January",
+            "February",
+            "March"
         ],
         "zodiac": false,
         "mainStars": [
@@ -18,13 +20,14 @@
             "Saiph"
         ],
         "brightestStar": "Rigel",
-        "description": "Orion is a prominent constellation located on the celestial equator and visible throughout the world. It is one of the most conspicuous and recognizable constellations in the night sky.",
-        "mythology": "In Greek mythology, Orion was a supernaturally strong hunter. He was placed in the stars by Zeus after his death.",
+        "description": "Orion is a prominent constellation located on the celestial equator and visible throughout the world. It is one of the most conspicuous and recognizable constellations in the night sky. Orion's Belt, formed by three bright stars (Mintaka, Alnilam, and Alnitak), makes it easy to identify.",
+        "mythology": "In Greek mythology, Orion was a supernaturally strong hunter, the son of Poseidon. He was placed in the stars by Zeus after his death. Various myths describe his death, including being killed by a scorpion sent by Gaia, which is why Orion and Scorpius are placed on opposite sides of the sky.",
         "areaSqDeg": 594,
         "notableObjects": [
             "Orion Nebula (M42)",
             "Horsehead Nebula",
-            "Barnard's Loop"
+            "Barnard's Loop",
+            "Flame Nebula"
         ]
     },
     {
@@ -33,7 +36,8 @@
         "abbreviation": "UMa",
         "hemisphere": "Northern",
         "bestViewingMonths": [
-            "April"
+            "April",
+            "May"
         ],
         "zodiac": false,
         "mainStars": [
@@ -46,13 +50,14 @@
             "Alkaid"
         ],
         "brightestStar": "Alioth",
-        "description": "Ursa Major is visible throughout the year from most of the northern hemisphere. Its seven brightest stars form the Big Dipper asterism.",
-        "mythology": "In Greek mythology, it represents Callisto, a nymph turned into a bear by Hera.",
+        "description": "Ursa Major is visible throughout the year from most of the northern hemisphere. Its seven brightest stars form the Big Dipper (or Plough) asterism, one of the most recognizable patterns in the night sky. The two stars Dubhe and Merak point toward Polaris, the North Star.",
+        "mythology": "In Greek mythology, Ursa Major represents Callisto, a beautiful nymph and follower of Artemis. Zeus fell in love with her, and to hide his affair from Hera, he transformed Callisto into a bear. Later, Zeus placed her among the stars.",
         "areaSqDeg": 1280,
         "notableObjects": [
             "Pinwheel Galaxy (M101)",
             "Bode's Galaxy (M81)",
-            "Cigar Galaxy (M82)"
+            "Cigar Galaxy (M82)",
+            "Owl Nebula (M97)"
         ]
     },
     {
@@ -61,20 +66,23 @@
         "abbreviation": "UMi",
         "hemisphere": "Northern",
         "bestViewingMonths": [
-            "June"
+            "June",
+            "July"
         ],
         "zodiac": false,
         "mainStars": [
             "Polaris",
             "Kochab",
-            "Pherkad"
+            "Pherkad",
+            "Yildun",
+            "Ahfa al Farkadain"
         ],
         "brightestStar": "Polaris",
-        "description": "Ursa Minor contains the Little Dipper asterism. Polaris, the North Star, is located at the end of the dipper's handle.",
-        "mythology": "Often associated with Arcas, the son of Callisto, who was transformed into a bear.",
+        "description": "Ursa Minor contains the Little Dipper asterism. Polaris, the North Star, is located at the end of the dipper's handle and has been used for navigation for centuries. Despite its fame, Polaris is not the brightest star in the sky, but its position near the celestial north pole makes it invaluable.",
+        "mythology": "Often associated with Arcas, the son of Callisto, who was transformed into a bear by Zeus. To save Arcas from accidentally killing his mother Callisto, Zeus placed both of them in the sky as the Great and Little Bears.",
         "areaSqDeg": 256,
         "notableObjects": [
-            "Ursa Minor Dwarf"
+            "Ursa Minor Dwarf Galaxy"
         ]
     },
     {
@@ -83,7 +91,8 @@
         "abbreviation": "Cas",
         "hemisphere": "Northern",
         "bestViewingMonths": [
-            "November"
+            "November",
+            "December"
         ],
         "zodiac": false,
         "mainStars": [
@@ -94,12 +103,14 @@
             "Segin"
         ],
         "brightestStar": "Schedar",
-        "description": "Cassiopeia is easily recognizable due to its distinctive 'W' shape, formed by five bright stars.",
-        "mythology": "Named after the vain queen Cassiopeia in Greek mythology, who boasted about her unrivaled beauty.",
+        "description": "Cassiopeia is easily recognizable due to its distinctive 'W' or 'M' shape, formed by five bright stars. The constellation is circumpolar in many northern latitudes, meaning it never sets below the horizon.",
+        "mythology": "Named after the vain queen Cassiopeia in Greek mythology, who boasted that her beauty surpassed even the Nereids. As punishment for her vanity, she was placed in the sky tied to her throne.",
         "areaSqDeg": 598,
         "notableObjects": [
-            "Cassiopeia A",
-            "Pacman Nebula"
+            "Cassiopeia A (supernova remnant)",
+            "Pacman Nebula (NGC 281)",
+            "Heart Nebula",
+            "Soul Nebula"
         ]
     },
     {
@@ -108,23 +119,27 @@
         "abbreviation": "Sco",
         "hemisphere": "Southern",
         "bestViewingMonths": [
-            "July"
+            "July",
+            "August"
         ],
         "zodiac": true,
         "mainStars": [
             "Antares",
             "Shaula",
             "Sargas",
-            "Dschubba"
+            "Dschubba",
+            "Lesath",
+            "Girtab"
         ],
         "brightestStar": "Antares",
-        "description": "Scorpius is a large constellation located in the southern hemisphere near the center of the Milky Way.",
-        "mythology": "Represents the scorpion that stung Orion the Hunter in Greek mythology.",
+        "description": "Scorpius is a striking constellation in the southern sky, near the center of the Milky Way. Its brightest star, Antares, is a red supergiant whose name means 'rival of Mars' due to its reddish color.",
+        "mythology": "Represents the scorpion that stung and killed Orion the Hunter in Greek mythology. The gods placed both in the sky on opposite sides so they would never meet again.",
         "areaSqDeg": 497,
         "notableObjects": [
             "Butterfly Cluster (M6)",
             "Ptolemy Cluster (M7)",
-            "Cat's Paw Nebula"
+            "Cat's Paw Nebula",
+            "NGC 6231"
         ]
     },
     {
@@ -133,22 +148,27 @@
         "abbreviation": "Sgr",
         "hemisphere": "Southern",
         "bestViewingMonths": [
-            "August"
+            "August",
+            "September"
         ],
         "zodiac": true,
         "mainStars": [
             "Kaus Australis",
             "Nunki",
-            "Ascella"
+            "Ascella",
+            "Kaus Media",
+            "Kaus Borealis",
+            "Nash"
         ],
         "brightestStar": "Kaus Australis",
-        "description": "Sagittarius is commonly depicted as a centaur drawing a bow. It lies in the direction of the galactic center.",
-        "mythology": "Often identified as a centaur, usually Chiron or Crotus, aiming an arrow at Antares, the heart of the scorpion.",
+        "description": "Sagittarius is commonly depicted as a centaur drawing a bow. The constellation contains the Teapot asterism. Most importantly, Sagittarius lies in the direction of the center of our Milky Way galaxy.",
+        "mythology": "Often identified as the centaur Chiron or Crotus, the satyr son of Pan. Unlike the wild centaur Centaurus, Sagittarius is depicted as civilized.",
         "areaSqDeg": 867,
         "notableObjects": [
             "Lagoon Nebula (M8)",
             "Trifid Nebula (M20)",
-            "Omega Nebula (M17)"
+            "Omega Nebula (M17)",
+            "Sagittarius A* (galactic center)"
         ]
     },
     {
@@ -157,22 +177,27 @@
         "abbreviation": "Leo",
         "hemisphere": "Northern",
         "bestViewingMonths": [
-            "April"
+            "April",
+            "May"
         ],
         "zodiac": true,
         "mainStars": [
             "Regulus",
             "Denebola",
-            "Algieba"
+            "Algieba",
+            "Zosma",
+            "Chertan",
+            "Adhafera"
         ],
         "brightestStar": "Regulus",
-        "description": "Leo contains many bright stars and is one of the most easily recognizable constellations, resembling a crouching lion.",
-        "mythology": "Represents the Nemean Lion killed by the mythical Greek hero Heracles as one of his twelve labors.",
+        "description": "Leo contains many bright stars and is one of the most easily recognizable constellations. The 'Sickle' asterism marks the lion's head and mane, while Denebola marks its tail.",
+        "mythology": "Represents the Nemean Lion, a fearsome beast with an impenetrable hide slain by Heracles as the first of his twelve labors.",
         "areaSqDeg": 947,
         "notableObjects": [
-            "Leo Triplet",
-            "M65",
-            "M66"
+            "Leo Triplet (M65, M66, NGC 3628)",
+            "M95",
+            "M96",
+            "M105"
         ]
     },
     {
@@ -181,22 +206,26 @@
         "abbreviation": "Tau",
         "hemisphere": "Northern",
         "bestViewingMonths": [
-            "January"
+            "January",
+            "February"
         ],
         "zodiac": true,
         "mainStars": [
             "Aldebaran",
             "Elnath",
-            "Alcyone"
+            "Alcyone",
+            "Tianguan",
+            "Ain"
         ],
         "brightestStar": "Aldebaran",
-        "description": "Taurus is a large and prominent constellation in the northern hemisphere's winter sky.",
-        "mythology": "Associated with Zeus, who adopted the shape of a bull in order to abduct Europa.",
+        "description": "Taurus is a large and prominent constellation in the northern hemisphere's winter sky. It hosts two famous star clusters: the Pleiades (Seven Sisters) and the Hyades.",
+        "mythology": "Most commonly associated with Zeus, who transformed himself into a beautiful white bull to abduct Europa, the princess of Phoenicia.",
         "areaSqDeg": 797,
         "notableObjects": [
             "Pleiades (M45)",
             "Hyades",
-            "Crab Nebula (M1)"
+            "Crab Nebula (M1)",
+            "Hind's Variable Nebula"
         ]
     },
     {
@@ -205,21 +234,27 @@
         "abbreviation": "Gem",
         "hemisphere": "Northern",
         "bestViewingMonths": [
-            "February"
+            "February",
+            "March"
         ],
         "zodiac": true,
         "mainStars": [
             "Pollux",
             "Castor",
-            "Alhena"
+            "Alhena",
+            "Mebsuta",
+            "Tejat",
+            "Propus"
         ],
         "brightestStar": "Pollux",
-        "description": "Gemini is dominated by its two brightest stars, Castor and Pollux, which represent the heads of the twins.",
-        "mythology": "Represents the twins Castor and Pollux (Polydeuces) in Greek mythology.",
+        "description": "Gemini is dominated by its two brightest stars, Castor and Pollux, which represent the heads of the mythological twins. Castor is a remarkable sextuple star system.",
+        "mythology": "Represents the twins Castor and Pollux in Greek mythology. When Castor died, Pollux asked Zeus to share his immortality, and they were placed together in the stars.",
         "areaSqDeg": 514,
         "notableObjects": [
-            "Eskimo Nebula",
-            "M35"
+            "Eskimo Nebula (NGC 2392)",
+            "Medusa Nebula",
+            "M35",
+            "Jellyfish Nebula"
         ]
     },
     {
@@ -228,22 +263,26 @@
         "abbreviation": "And",
         "hemisphere": "Northern",
         "bestViewingMonths": [
-            "November"
+            "November",
+            "December"
         ],
         "zodiac": false,
         "mainStars": [
             "Alpheratz",
             "Mirach",
-            "Almach"
+            "Almach",
+            "Adhil"
         ],
         "brightestStar": "Alpheratz",
-        "description": "Andromeda is located north of the celestial equator. It contains the Andromeda Galaxy, the nearest major galaxy to the Milky Way.",
-        "mythology": "Named after Andromeda, the daughter of Cassiopeia, who was chained to a rock to be eaten by the sea monster Cetus.",
+        "description": "Andromeda is located north of the celestial equator. Its most famous feature is the Andromeda Galaxy (M31), the nearest major galaxy to the Milky Way at 2.5 million light-years away.",
+        "mythology": "Named after Andromeda, the daughter of Cassiopeia and Cepheus. She was chained to a rock as a sacrifice but was saved by Perseus.",
         "areaSqDeg": 722,
         "notableObjects": [
             "Andromeda Galaxy (M31)",
             "M32",
-            "M110"
+            "M110",
+            "NGC 752",
+            "Blue Snowball Nebula"
         ]
     },
     {
@@ -252,23 +291,26 @@
         "abbreviation": "Cyg",
         "hemisphere": "Northern",
         "bestViewingMonths": [
-            "September"
+            "September",
+            "October"
         ],
         "zodiac": false,
         "mainStars": [
             "Deneb",
             "Sadr",
             "Gienah",
-            "Albireo"
+            "Albireo",
+            "Fawaris"
         ],
         "brightestStar": "Deneb",
-        "description": "Cygnus is recognizable for the Northern Cross asterism. It lies on the plane of the Milky Way.",
-        "mythology": "Represents a swan. Several different myths are associated with the swan, often involving Zeus or Orpheus.",
+        "description": "Cygnus is recognizable for the Northern Cross asterism, which dominates the summer sky. Deneb is one of the most luminous stars known and forms part of the Summer Triangle.",
+        "mythology": "Represents a swan and is associated with several Greek myths. The most common identifies it as Zeus in swan form, who seduced Leda.",
         "areaSqDeg": 804,
         "notableObjects": [
             "North America Nebula",
             "Veil Nebula",
-            "Cygnus X-1"
+            "Cygnus X-1 (black hole)",
+            "Blinking Planetary Nebula"
         ]
     },
     {
@@ -277,20 +319,24 @@
         "abbreviation": "Lyr",
         "hemisphere": "Northern",
         "bestViewingMonths": [
-            "August"
+            "August",
+            "September"
         ],
         "zodiac": false,
         "mainStars": [
             "Vega",
             "Sulafat",
-            "Sheliak"
+            "Sheliak",
+            "Delta Lyrae"
         ],
         "brightestStar": "Vega",
-        "description": "Lyra is a small constellation. Its brightest star, Vega, is one of the brightest stars in the night sky and part of the Summer Triangle.",
-        "mythology": "Represents the lyre of Orpheus, the musician and poet in Greek mythology.",
+        "description": "Lyra is a small but prominent constellation. Its brightest star, Vega, is the fifth-brightest star in the night sky and was the northern pole star around 12,000 BC.",
+        "mythology": "Represents the lyre of Orpheus, the legendary musician and poet in Greek mythology. His music was so beautiful that even stones and wild beasts were moved.",
         "areaSqDeg": 286,
         "notableObjects": [
-            "Ring Nebula (M57)"
+            "Ring Nebula (M57)",
+            "M56 (globular cluster)",
+            "Epsilon Lyrae (Double Double)"
         ]
     },
     {
@@ -299,21 +345,23 @@
         "abbreviation": "Cru",
         "hemisphere": "Southern",
         "bestViewingMonths": [
-            "May"
+            "May",
+            "June"
         ],
         "zodiac": false,
         "mainStars": [
             "Acrux",
             "Mimosa",
             "Gacrux",
-            "Imai"
+            "Imai",
+            "Ginan"
         ],
         "brightestStar": "Acrux",
-        "description": "Crux, or the Southern Cross, is the smallest of all the 88 modern constellations but is one of the most distinctive.",
-        "mythology": "Important in the navigation and folklore of many southern hemisphere cultures.",
+        "description": "Crux, or the Southern Cross, is the smallest of all the 88 modern constellations but is one of the most distinctive. It has been used for navigation for centuries.",
+        "mythology": "The Southern Cross was visible from Mediterranean latitudes in ancient times but was 'lost' due to precession. It became important in navigation and folklore of southern hemisphere cultures.",
         "areaSqDeg": 68,
         "notableObjects": [
-            "Jewel Box Cluster",
+            "Jewel Box Cluster (NGC 4755)",
             "Coalsack Nebula"
         ]
     },
@@ -323,20 +371,26 @@
         "abbreviation": "Aqr",
         "hemisphere": "Southern",
         "bestViewingMonths": [
-            "October"
+            "October",
+            "November"
         ],
         "zodiac": true,
         "mainStars": [
             "Sadalsuud",
-            "Sadalmelik"
+            "Sadalmelik",
+            "Skat",
+            "Sadachbia",
+            "Albali"
         ],
         "brightestStar": "Sadalsuud",
-        "description": "Aquarius is a faint constellation in the zodiac, situated between Capricornus and Pisces.",
-        "mythology": "Represents Ganymede, a beautiful Phrygian youth who was snatched up by Zeus to become the cup-bearer of the gods.",
+        "description": "Aquarius is a faint constellation in the zodiac, representing the figure of a man pouring water from a jar. The stream of water flows toward Piscis Austrinus.",
+        "mythology": "Often identified with Ganymede, a beautiful youth snatched by Zeus to become the cup-bearer of the gods on Mount Olympus.",
         "areaSqDeg": 980,
         "notableObjects": [
-            "Helix Nebula",
-            "Saturn Nebula"
+            "Helix Nebula (NGC 7293)",
+            "Saturn Nebula (NGC 7009)",
+            "M2 (globular cluster)",
+            "M72"
         ]
     },
     {
@@ -345,19 +399,24 @@
         "abbreviation": "Ari",
         "hemisphere": "Northern",
         "bestViewingMonths": [
-            "December"
+            "December",
+            "January"
         ],
         "zodiac": true,
         "mainStars": [
             "Hamal",
             "Sheratan",
-            "Mesarthim"
+            "Mesarthim",
+            "Botein",
+            "41 Arietis"
         ],
         "brightestStar": "Hamal",
-        "description": "Aries is a mid-size constellation in the northern hemisphere.",
-        "mythology": "Represents the ram whose Golden Fleece was sought by Jason and the Argonauts.",
+        "description": "Aries is a mid-sized constellation in the northern hemisphere. Although relatively faint, it has been identified as a ram since Babylonian times.",
+        "mythology": "Represents the ram whose Golden Fleece was sought by Jason and the Argonauts. The golden-fleeced ram was sent by Nephele to rescue her children Phrixus and Helle.",
         "areaSqDeg": 441,
-        "notableObjects": []
+        "notableObjects": [
+            "NGC 772 (spiral galaxy)"
+        ]
     },
     {
         "id": "virgo",
@@ -365,21 +424,27 @@
         "abbreviation": "Vir",
         "hemisphere": "Both",
         "bestViewingMonths": [
-            "May"
+            "May",
+            "June"
         ],
         "zodiac": true,
         "mainStars": [
             "Spica",
             "Porrima",
-            "Vindemiatrix"
+            "Vindemiatrix",
+            "Auva",
+            "Zavijava"
         ],
         "brightestStar": "Spica",
-        "description": "Virgo is the largest constellation in the zodiac and the second-largest constellation overall.",
-        "mythology": "Associated with Dike, the goddess of justice, or Demeter, the goddess of the harvest.",
+        "description": "Virgo is the largest constellation in the zodiac and the second-largest constellation overall. Virgo contains the Virgo Cluster, a collection of over 1,300 galaxies.",
+        "mythology": "Associated with multiple goddesses including Dike (goddess of justice), Demeter (goddess of the harvest), and Persephone (goddess of spring).",
         "areaSqDeg": 1294,
         "notableObjects": [
             "Virgo Cluster",
-            "Sombrero Galaxy (M104)"
+            "Sombrero Galaxy (M104)",
+            "M87 (giant elliptical with black hole)",
+            "M49",
+            "M60"
         ]
     }
 ]

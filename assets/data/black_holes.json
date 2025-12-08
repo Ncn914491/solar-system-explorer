@@ -1,0 +1,92 @@
+[
+    {
+        "id": "sagittarius_a_star",
+        "name": "Sagittarius A*",
+        "type": "supermassive_black_hole",
+        "massInSolarMasses": 4000000,
+        "distanceLightYears": 26000,
+        "location": "Center of the Milky Way",
+        "description": "Sagittarius A* (pronounced 'Sagittarius A-star') is the supermassive black hole at the center of our Milky Way galaxy. It has a mass of about 4 million times that of our Sun.",
+        "funFacts": [
+            "Stars orbit Sagittarius A* at speeds over 8,000 km/s.",
+            "The Event Horizon Telescope imaged it in 2022.",
+            "The black hole is remarkably quiet despite its size.",
+            "It is surrounded by a cluster of massive young stars."
+        ],
+        "discoveredBy": "Radio astronomy",
+        "discoveryYear": 1974,
+        "imageKeyword": "sagittarius a star black hole milky way"
+    },
+    {
+        "id": "m87_black_hole",
+        "name": "M87* (Pōwehi)",
+        "type": "supermassive_black_hole",
+        "massInSolarMasses": 6500000000,
+        "distanceLightYears": 55000000,
+        "location": "Messier 87 galaxy",
+        "description": "M87* was the first black hole to be directly imaged by the Event Horizon Telescope in 2019. It is a supermassive black hole at the center of the giant elliptical galaxy Messier 87.",
+        "funFacts": [
+            "First black hole ever directly imaged (2019).",
+            "Its mass is 6.5 billion times that of our Sun.",
+            "The event horizon is larger than our solar system.",
+            "It produces a powerful jet of plasma 5,000 light-years long."
+        ],
+        "discoveredBy": "Event Horizon Telescope",
+        "discoveryYear": 2019,
+        "imageKeyword": "m87 black hole event horizon"
+    },
+    {
+        "id": "cygnus_x1",
+        "name": "Cygnus X-1",
+        "type": "stellar_black_hole",
+        "massInSolarMasses": 21,
+        "distanceLightYears": 6070,
+        "location": "Cygnus constellation",
+        "description": "Cygnus X-1 was the first widely accepted black hole candidate. It is a stellar-mass black hole in a binary system with a blue supergiant star.",
+        "funFacts": [
+            "Subject of a famous bet between Stephen Hawking and Kip Thorne.",
+            "It pulls material from its companion star, creating an accretion disk.",
+            "The black hole completes one orbit every 5.6 days.",
+            "It was one of the strongest X-ray sources discovered early on."
+        ],
+        "discoveredBy": "Multiple observations",
+        "discoveryYear": 1964,
+        "imageKeyword": "cygnus x-1 black hole"
+    },
+    {
+        "id": "grs_1915",
+        "name": "GRS 1915+105",
+        "type": "stellar_black_hole",
+        "massInSolarMasses": 12.4,
+        "distanceLightYears": 36000,
+        "location": "Aquila constellation",
+        "description": "GRS 1915+105 is a stellar black hole known for its extremely rapid and complex X-ray variability. It was the first known galactic source to produce superluminal jets.",
+        "funFacts": [
+            "Spins at nearly 1,150 rotations per second.",
+            "Produces jets that appear to move faster than light.",
+            "Has the most variable X-ray output of any known source.",
+            "The companion star is being cannibalized by the black hole."
+        ],
+        "discoveredBy": "WATCH instrument on GRANAT satellite",
+        "discoveryYear": 1992,
+        "imageKeyword": "grs 1915 black hole jets"
+    },
+    {
+        "id": "ton_618",
+        "name": "TON 618",
+        "type": "supermassive_black_hole",
+        "massInSolarMasses": 66000000000,
+        "distanceLightYears": 10400000000,
+        "location": "Canes Venatici constellation",
+        "description": "TON 618 hosts one of the most massive known black holes, with an estimated mass of 66 billion solar masses. It powers an extremely luminous quasar.",
+        "funFacts": [
+            "One of the most massive black holes ever discovered.",
+            "The event horizon could encompass our entire solar system.",
+            "The quasar shines with the light of 140 trillion suns.",
+            "Located at the edge of the observable universe."
+        ],
+        "discoveredBy": "Tonantzintla Survey",
+        "discoveryYear": 1957,
+        "imageKeyword": "ton 618 quasar black hole"
+    }
+]

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../../core/models/constellation_model.dart';
+import '../../../core/models/nasa_image_model.dart';
 import '../../../core/services/constellation_data_service.dart';
+import '../../../core/services/nasa_image_service.dart';
 
 class ConstellationDetailScreen extends StatefulWidget {
   final Constellation? constellation;
@@ -22,6 +24,10 @@ class _ConstellationDetailScreenState extends State<ConstellationDetailScreen> {
   Constellation? _constellation;
   bool _isLoading = true;
   String? _errorMessage;
+  List<NasaImage> _images = [];
+  bool _loadingImages = true;
+
+  final NasaImageService _imageService = NasaImageService();
 
   @override
   void initState() {
@@ -35,6 +41,7 @@ class _ConstellationDetailScreenState extends State<ConstellationDetailScreen> {
         _constellation = widget.constellation;
         _isLoading = false;
       });
+      _loadNasaImages(widget.constellation!);
     } else if (widget.constellationId != null) {
       try {
         final service = ConstellationDataService();
@@ -46,6 +53,8 @@ class _ConstellationDetailScreenState extends State<ConstellationDetailScreen> {
             _isLoading = false;
             if (result == null) {
               _errorMessage = 'Constellation not found';
+            } else {
+              _loadNasaImages(result);
             }
           });
         }
@@ -56,6 +65,27 @@ class _ConstellationDetailScreenState extends State<ConstellationDetailScreen> {
             _errorMessage = 'Failed to load constellation details';
           });
         }
+      }
+    }
+  }
+
+  Future<void> _loadNasaImages(Constellation constellation) async {
+    try {
+      // Search for constellation images from NASA
+      final searchQuery = '${constellation.name} constellation';
+      final images =
+          await _imageService.searchImages(searchQuery, page: 1, pageSize: 5);
+      if (mounted) {
+        setState(() {
+          _images = images;
+          _loadingImages = false;
+        });
+      }
+    } catch (e) {
+      if (mounted) {
+        setState(() {
+          _loadingImages = false;
+        });
       }
     }
   }
@@ -98,21 +128,19 @@ class _ConstellationDetailScreenState extends State<ConstellationDetailScreen> {
             ],
           ),
         ),
-        child: Container(
-          child: SafeArea(
-            child: LayoutBuilder(
-              builder: (context, constraints) {
-                if (constraints.maxWidth > 800) {
-                  return Center(
-                    child: ConstrainedBox(
-                      constraints: const BoxConstraints(maxWidth: 800),
-                      child: _buildContent(c),
-                    ),
-                  );
-                }
-                return _buildContent(c);
-              },
-            ),
+        child: SafeArea(
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              if (constraints.maxWidth > 800) {
+                return Center(
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(maxWidth: 800),
+                    child: _buildContent(c),
+                  ),
+                );
+              }
+              return _buildContent(c);
+            },
           ),
         ),
       ),
@@ -128,8 +156,8 @@ class _ConstellationDetailScreenState extends State<ConstellationDetailScreen> {
           // Header Card
           Card(
             color: Colors.white.withOpacity(0.1),
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16)),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
             child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Column(
@@ -184,7 +212,8 @@ class _ConstellationDetailScreenState extends State<ConstellationDetailScreen> {
                     children: [
                       _buildInfoItem('Hemisphere', c.hemisphere),
                       _buildInfoItem('Best Month', c.bestViewingMonths.first),
-                      _buildInfoItem('Area', '${c.areaSqDeg?.round() ?? "?"} sq°'),
+                      _buildInfoItem(
+                          'Area', '${c.areaSqDeg?.round() ?? "?"} sq°'),
                     ],
                   ),
                 ],
@@ -192,6 +221,66 @@ class _ConstellationDetailScreenState extends State<ConstellationDetailScreen> {
             ),
           ),
           const SizedBox(height: 24),
+
+          // NASA Images Gallery
+          if (_images.isNotEmpty) ...[
+            Text(
+              'NASA Images',
+              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+            ),
+            const SizedBox(height: 12),
+            SizedBox(
+              height: 180,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: _images.length,
+                itemBuilder: (context, index) {
+                  final image = _images[index];
+                  return Padding(
+                    padding: EdgeInsets.only(
+                        right: index < _images.length - 1 ? 12 : 0),
+                    child: GestureDetector(
+                      onTap: () => _showFullImage(context, image),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(12),
+                        child: Image.network(
+                          image.imageUrl,
+                          width: 260,
+                          fit: BoxFit.cover,
+                          errorBuilder: (context, error, stackTrace) =>
+                              Container(
+                            width: 260,
+                            color: Colors.grey.shade800,
+                            child: const Icon(Icons.image_not_supported,
+                                color: Colors.white54, size: 40),
+                          ),
+                          loadingBuilder: (context, child, loadingProgress) {
+                            if (loadingProgress == null) return child;
+                            return Container(
+                              width: 260,
+                              color: Colors.grey.shade900,
+                              child: const Center(
+                                  child: CircularProgressIndicator()),
+                            );
+                          },
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+            const SizedBox(height: 24),
+          ] else if (_loadingImages) ...[
+            const SizedBox(
+              height: 180,
+              child: Center(child: CircularProgressIndicator()),
+            ),
+            const SizedBox(height: 24),
+          ],
 
           // Description
           Text(
@@ -240,41 +329,30 @@ class _ConstellationDetailScreenState extends State<ConstellationDetailScreen> {
           ),
           const SizedBox(height: 24),
 
-          // Stars
+          // Stars Section
           Text(
-            'Main Stars',
+            'Main Stars (${c.mainStars.length})',
             style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
           ),
-          const SizedBox(height: 12),
-          Wrap(
-            spacing: 8,
-            runSpacing: 8,
-            children: c.mainStars.map((star) {
-              final isBrightest = star == c.brightestStar;
-              return Chip(
-                label: Text(star),
-                backgroundColor: isBrightest
-                    ? Colors.amber.withOpacity(0.3)
-                    : Colors.white.withOpacity(0.1),
-                side: BorderSide(
-                  color: isBrightest ? Colors.amber : Colors.white24,
-                ),
-                labelStyle: TextStyle(
-                  color: isBrightest ? Colors.amberAccent : Colors.white,
-                  fontWeight: isBrightest ? FontWeight.bold : FontWeight.normal,
-                ),
-              );
-            }).toList(),
+          const SizedBox(height: 8),
+          Text(
+            '${c.brightestStar} is the brightest star in ${c.name}.',
+            style: const TextStyle(
+              fontSize: 14,
+              color: Colors.white60,
+            ),
           ),
+          const SizedBox(height: 12),
+          _buildStarsGrid(c),
           const SizedBox(height: 24),
 
           // Notable Objects
           if (c.notableObjects != null && c.notableObjects!.isNotEmpty) ...[
             Text(
-              'Notable Objects',
+              'Notable Deep-Sky Objects',
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -284,17 +362,28 @@ class _ConstellationDetailScreenState extends State<ConstellationDetailScreen> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: c.notableObjects!.map((obj) {
-                return Padding(
-                  padding: const EdgeInsets.only(bottom: 8.0),
+                return Container(
+                  margin: const EdgeInsets.only(bottom: 8),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                  decoration: BoxDecoration(
+                    color: Colors.teal.withOpacity(0.15),
+                    borderRadius: BorderRadius.circular(8),
+                    border:
+                        Border.all(color: Colors.tealAccent.withOpacity(0.3)),
+                  ),
                   child: Row(
                     children: [
-                      const Icon(Icons.blur_on, color: Colors.tealAccent, size: 20),
+                      const Icon(Icons.blur_on,
+                          color: Colors.tealAccent, size: 20),
                       const SizedBox(width: 12),
-                      Text(
-                        obj,
-                        style: const TextStyle(
-                          fontSize: 16,
-                          color: Colors.white70,
+                      Expanded(
+                        child: Text(
+                          obj,
+                          style: const TextStyle(
+                            fontSize: 15,
+                            color: Colors.white70,
+                          ),
                         ),
                       ),
                     ],
@@ -305,31 +394,139 @@ class _ConstellationDetailScreenState extends State<ConstellationDetailScreen> {
             const SizedBox(height: 24),
           ],
 
-          // Future Features Placeholders
-          const Divider(color: Colors.white24),
-          const SizedBox(height: 16),
-          _buildFutureFeatureButton(
-            icon: Icons.map,
-            label: 'View in Sky Map',
-            onTap: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Star Map coming soon!')),
-              );
-            },
-          ),
-          const SizedBox(height: 12),
-          _buildFutureFeatureButton(
-            icon: Icons.view_in_ar,
-            label: 'AR Sky Overlay',
-            onTap: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('AR Overlay coming soon!')),
-              );
-            },
-          ),
           const SizedBox(height: 32),
         ],
       ),
+    );
+  }
+
+  void _showFullImage(BuildContext context, NasaImage image) {
+    showDialog(
+      context: context,
+      builder: (context) => Dialog(
+        backgroundColor: Colors.transparent,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(12),
+              child: Image.network(
+                image.imageUrl,
+                fit: BoxFit.contain,
+              ),
+            ),
+            const SizedBox(height: 12),
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.black87,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Column(
+                children: [
+                  Text(
+                    image.title,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  if (image.description.isNotEmpty) ...[
+                    const SizedBox(height: 8),
+                    Text(
+                      image.description,
+                      style: const TextStyle(
+                        color: Colors.white70,
+                        fontSize: 12,
+                      ),
+                      maxLines: 3,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildStarsGrid(Constellation c) {
+    return Wrap(
+      spacing: 8,
+      runSpacing: 8,
+      children: c.mainStars.map((star) {
+        final isBrightest = star == c.brightestStar;
+        return Container(
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+          decoration: BoxDecoration(
+            gradient: isBrightest
+                ? LinearGradient(
+                    colors: [
+                      Colors.amber.withOpacity(0.4),
+                      Colors.orange.withOpacity(0.3),
+                    ],
+                  )
+                : null,
+            color: isBrightest ? null : Colors.white.withOpacity(0.1),
+            borderRadius: BorderRadius.circular(20),
+            border: Border.all(
+              color: isBrightest ? Colors.amber : Colors.white24,
+              width: isBrightest ? 2 : 1,
+            ),
+            boxShadow: isBrightest
+                ? [
+                    BoxShadow(
+                      color: Colors.amber.withOpacity(0.3),
+                      blurRadius: 8,
+                      spreadRadius: 1,
+                    ),
+                  ]
+                : null,
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(
+                Icons.star,
+                size: 16,
+                color: isBrightest ? Colors.amber : Colors.white54,
+              ),
+              const SizedBox(width: 6),
+              Text(
+                star,
+                style: TextStyle(
+                  color: isBrightest ? Colors.amber.shade100 : Colors.white,
+                  fontWeight: isBrightest ? FontWeight.bold : FontWeight.normal,
+                  fontSize: 14,
+                ),
+              ),
+              if (isBrightest) ...[
+                const SizedBox(width: 6),
+                Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                  decoration: BoxDecoration(
+                    color: Colors.amber.withOpacity(0.3),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: const Text(
+                    'Brightest',
+                    style: TextStyle(
+                      color: Colors.amber,
+                      fontSize: 10,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
+            ],
+          ),
+        );
+      }).toList(),
     );
   }
 
@@ -354,42 +551,6 @@ class _ConstellationDetailScreenState extends State<ConstellationDetailScreen> {
           ),
         ),
       ],
-    );
-  }
-
-  Widget _buildFutureFeatureButton({
-    required IconData icon,
-    required String label,
-    required VoidCallback onTap,
-  }) {
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(12),
-        child: Container(
-          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
-          decoration: BoxDecoration(
-            border: Border.all(color: Colors.white24),
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(icon, color: Colors.white70),
-              const SizedBox(width: 12),
-              Text(
-                label,
-                style: const TextStyle(
-                  color: Colors.white70,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
     );
   }
 }

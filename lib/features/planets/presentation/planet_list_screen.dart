@@ -76,7 +76,8 @@ class _PlanetListScreenState extends State<PlanetListScreen> {
               child: ListView.separated(
                 padding: const EdgeInsets.all(16),
                 itemCount: planets.length,
-                separatorBuilder: (context, index) => const SizedBox(height: 16),
+                separatorBuilder: (context, index) =>
+                    const SizedBox(height: 16),
                 itemBuilder: (context, index) {
                   final planet = planets[index];
                   return _PlanetCard(
@@ -102,7 +103,7 @@ class _PlanetCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    
+
     return Card(
       elevation: 4,
       clipBehavior: Clip.antiAlias,

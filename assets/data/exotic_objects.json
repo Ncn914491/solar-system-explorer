@@ -1,0 +1,86 @@
+[
+    {
+        "id": "sagittarius_a",
+        "name": "Sagittarius A*",
+        "type": "Supermassive Black Hole",
+        "description": "Sagittarius A* is a supermassive black hole at the Galactic Center of the Milky Way. It is a bright and very compact astronomical radio source. The formation of such supermassive black holes is still a topic of intense research.",
+        "mass": "4.154 million Solar masses",
+        "distance": "26,673 light-years",
+        "funFacts": [
+            "It spins at about 10% of the speed of light.",
+            "It flares up daily, emitting X-rays.",
+            "Stars orbit it at incredible speeds, like S2 which reaches 5,000 km/s."
+        ],
+        "imageKeyword": "Sagittarius A* black hole"
+    },
+    {
+        "id": "m87",
+        "name": "M87*",
+        "type": "Supermassive Black Hole",
+        "description": "The first black hole to be ever imaged by the Event Horizon Telescope. It resides at the center of the Messier 87 galaxy and shoots out a jet of plasma 5,000 light-years long.",
+        "mass": "6.5 billion Solar masses",
+        "distance": "53.5 million light-years",
+        "funFacts": [
+            "Its event horizon is larger than our entire solar system.",
+            "The image of its shadow confirmed Einstein's theory of general relativity.",
+            "It consumes 90 Earth masses of gas per day."
+        ],
+        "imageKeyword": "M87 black hole"
+    },
+    {
+        "id": "wormhole",
+        "name": "Einstein-Rosen Bridge",
+        "type": "Theoretical Wormhole",
+        "description": "A wormhole is a speculative structure linking disparate points in spacetime. Einstein and Rosen discovered this solution in 1935. While consistent with general relativity, no observational evidence for them exists yet.",
+        "mass": "Unknown / Hypothetical",
+        "distance": "Theoretical",
+        "funFacts": [
+            "Would require 'exotic matter' with negative energy density to stay open.",
+            "Could theoretically allow for time travel as well as space travel.",
+            "Interstellar movie featured a scientifically plotted representation of one."
+        ],
+        "imageKeyword": "Wormhole visualization"
+    },
+    {
+        "id": "white_hole",
+        "name": "White Hole",
+        "type": "Theoretical Singularity",
+        "description": "A theoretical time-reversed black hole. While a black hole lets nothing escape, a white hole lets nothing enter. It ejects matter and light but cannot be entered from the outside.",
+        "mass": "Unknown / Hypothetical",
+        "distance": "Theoretical",
+        "funFacts": [
+            "No white holes have ever been observed.",
+            "Some theories suggest the Big Bang itself was a white hole.",
+            "They are mathematically valid solutions to Einstein's field equations."
+        ],
+        "imageKeyword": "White hole space"
+    },
+    {
+        "id": "pulsar_lich",
+        "name": "PSR B1257+12 (Lich)",
+        "type": "Pulsar / Neutron Star",
+        "description": "A millisecond pulsar located 2,300 light-years away in the constellation Virgo. It hosts the first exoplanets ever discovered, known as 'draugr', 'poltergeist', and 'phobetor'.",
+        "mass": "1.4 Solar masses",
+        "distance": "2,300 light-years",
+        "funFacts": [
+            "It rotates 161 times every second.",
+            "The planets orbiting it are bathed in deadly radiation.",
+            "It is a 'zombie star' - a core remnant of a massive supernova."
+        ],
+        "imageKeyword": "Pulsar neutron star"
+    },
+    {
+        "id": "magnetar",
+        "name": "SGR 1806-20",
+        "type": "Magnetar",
+        "description": "A type of neutron star with an extremely powerful magnetic field. SGR 1806-20 has a magnetic field quadrillions of times stronger than Earth's.",
+        "mass": "Unknown",
+        "distance": "50,000 light-years",
+        "funFacts": [
+            "A flare from this star in 2004 released more energy in 0.2 seconds than the Sun does in 250,000 years.",
+            "Its magnetic field is strong enough to wipe credit cards from the Moon.",
+            "Starquakes on magnetars cause massive gamma-ray bursts."
+        ],
+        "imageKeyword": "Magnetar star"
+    }
+]

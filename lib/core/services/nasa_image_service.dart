@@ -34,7 +34,7 @@ class NasaImageService {
       if (response.statusCode == 200) {
         // Cache the successful response
         await prefs.setString(cacheKey, response.body);
-        
+
         final Map<String, dynamic> data = jsonDecode(response.body);
         return parseData(data);
       } else {
@@ -42,7 +42,7 @@ class NasaImageService {
       }
     } catch (e) {
       debugPrint('Error searching NASA images (network): $e');
-      
+
       // Try to load from cache
       if (prefs.containsKey(cacheKey)) {
         debugPrint('Loading NASA images from cache for $query');
@@ -56,7 +56,7 @@ class NasaImageService {
           }
         }
       }
-      
+
       // If no cache or cache failed, rethrow
       throw Exception('Error searching NASA images and no offline cache: $e');
     }
@@ -71,17 +71,17 @@ class NasaImageService {
       // We want to find 'orig' or 'large' or 'medium'.
       // Note: The collection URL might be http, we should ensure we can handle it.
       // NASA assets often use http.
-      
+
       final response = await http.get(Uri.parse(collectionUrl));
-      
+
       if (response.statusCode == 200) {
         final List<dynamic> urls = jsonDecode(response.body);
         // Prefer 'orig' or 'large'
         // The list is usually strings.
-        
+
         // Simple strategy: look for 'orig.jpg' or 'large.jpg'
         String? bestUrl;
-        
+
         // Sort of priority: orig > large > medium > small
         for (var url in urls) {
           final u = url.toString();
@@ -89,7 +89,7 @@ class NasaImageService {
           if (u.contains('~large')) bestUrl = u;
           if (bestUrl == null && u.contains('~medium')) bestUrl = u;
         }
-        
+
         return bestUrl ?? (urls.isNotEmpty ? urls.first.toString() : null);
       }
     } catch (e) {

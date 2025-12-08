@@ -11,10 +11,10 @@ class NasaApiService {
   NasaApiService({http.Client? client}) : _client = client ?? http.Client();
 
   /// Fetches the Astronomy Picture of the Day (APOD).
-  /// 
+  ///
   /// If [date] is provided, fetches the APOD for that specific date.
   /// Otherwise, fetches today's APOD.
-  /// 
+  ///
   /// Throws an [Exception] if the request fails.
   Future<ApodModel> fetchApod({DateTime? date}) async {
     try {
@@ -26,8 +26,9 @@ class NasaApiService {
         queryParams['date'] = DateFormat('yyyy-MM-dd').format(date);
       }
 
-      final uri = Uri.parse('${ApiConstants.baseUrl}${ApiConstants.apodEndpoint}')
-          .replace(queryParameters: queryParams);
+      final uri =
+          Uri.parse('${ApiConstants.baseUrl}${ApiConstants.apodEndpoint}')
+              .replace(queryParameters: queryParams);
 
       final response = await _client.get(uri);
 

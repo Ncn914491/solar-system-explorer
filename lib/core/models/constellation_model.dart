@@ -1,5 +1,3 @@
-
-
 class Constellation {
   final String id;
   final String name;
@@ -13,6 +11,7 @@ class Constellation {
   final String mythology;
   final double? areaSqDeg;
   final List<String>? notableObjects;
+  final String? imageUrl;
 
   Constellation({
     required this.id,
@@ -27,6 +26,7 @@ class Constellation {
     required this.mythology,
     this.areaSqDeg,
     this.notableObjects,
+    this.imageUrl,
   });
 
   factory Constellation.fromJson(Map<String, dynamic> json) {
@@ -51,6 +51,7 @@ class Constellation {
       notableObjects: (json['notableObjects'] as List<dynamic>?)
           ?.map((e) => e.toString())
           .toList(),
+      imageUrl: json['imageUrl'] as String?,
     );
   }
 
@@ -68,6 +69,7 @@ class Constellation {
       'mythology': mythology,
       'areaSqDeg': areaSqDeg,
       'notableObjects': notableObjects,
+      'imageUrl': imageUrl,
     };
   }
 }

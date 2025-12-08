@@ -6,7 +6,7 @@ import '../models/planet_model.dart';
 /// Service responsible for loading planet data from local assets.
 class PlanetDataService {
   static const String _dataPath = 'assets/data/planets.json';
-  
+
   List<Planet> _planets = [];
 
   /// Loads planets from the JSON asset.
@@ -17,14 +17,14 @@ class PlanetDataService {
     try {
       final String response = await rootBundle.loadString(_dataPath);
       final List<dynamic> data = jsonDecode(response);
-      
+
       _planets = data.map((json) => Planet.fromJson(json)).toList();
       return _planets;
     } catch (e) {
       // In a real app, we might log this to a crash reporting service
       // In a real app, we might log this to a crash reporting service
       debugPrint('Error loading planet data: $e');
-      // Return empty list or rethrow depending on requirements. 
+      // Return empty list or rethrow depending on requirements.
       // Prompt says "handle and report errors gracefully", but "expect it to succeed".
       // Returning empty list might be safer for UI than crashing, but rethrowing allows UI to show error.
       // Given "report errors gracefully", I'll print and rethrow so the caller knows something went wrong.

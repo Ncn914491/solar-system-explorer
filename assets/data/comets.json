@@ -1,0 +1,170 @@
+[
+    {
+        "id": "halley",
+        "name": "Halley's Comet",
+        "officialName": "1P/Halley",
+        "type": "short_period",
+        "nucleusDiameterKm": 11,
+        "orbitalPeriodYears": 75.3,
+        "perihelionAU": 0.586,
+        "aphelionAU": 35.1,
+        "description": "Halley's Comet is the most famous comet, visible from Earth every 75-76 years. It is the only short-period comet that is visible to the naked eye from Earth and will next appear in 2061.",
+        "funFacts": [
+            "Halley's Comet has been observed since 240 BC.",
+            "The comet was named after Edmond Halley who predicted its return.",
+            "Its next appearance will be in July 2061.",
+            "The Giotto spacecraft flew through its tail in 1986."
+        ],
+        "lastPerihelion": "1986-02-09",
+        "nextPerihelion": "2061-07-28",
+        "discoveredBy": "Prehistoric (predicted by Edmond Halley)",
+        "imageKeyword": "halley comet"
+    },
+    {
+        "id": "hale_bopp",
+        "name": "Comet Hale-Bopp",
+        "officialName": "C/1995 O1",
+        "type": "long_period",
+        "nucleusDiameterKm": 60,
+        "orbitalPeriodYears": 2533,
+        "perihelionAU": 0.914,
+        "aphelionAU": 370.8,
+        "description": "Hale-Bopp was one of the most widely observed comets of the 20th century. It was visible to the naked eye for a record 18 months and is one of the largest comets ever observed.",
+        "funFacts": [
+            "Hale-Bopp was visible to the naked eye for 18 months.",
+            "It has one of the largest known comet nuclei.",
+            "Discovered independently by two amateur astronomers.",
+            "It won't return until around the year 4530."
+        ],
+        "lastPerihelion": "1997-04-01",
+        "nextPerihelion": "4530",
+        "discoveredBy": "Alan Hale and Thomas Bopp",
+        "imageKeyword": "hale-bopp comet"
+    },
+    {
+        "id": "churyumov_gerasimenko",
+        "name": "Comet 67P",
+        "officialName": "67P/Churyumov–Gerasimenko",
+        "type": "short_period",
+        "nucleusDiameterKm": 4,
+        "orbitalPeriodYears": 6.45,
+        "perihelionAU": 1.24,
+        "aphelionAU": 5.68,
+        "description": "Comet 67P is famous for being the target of ESA's Rosetta mission, which included the first soft landing on a comet nucleus by the Philae lander in 2014.",
+        "funFacts": [
+            "Philae lander was first spacecraft to land on a comet.",
+            "The comet has a distinctive 'rubber duck' shape.",
+            "Rosetta orbited the comet for over two years.",
+            "Water vapor was detected in the comet's coma."
+        ],
+        "lastPerihelion": "2021-11-02",
+        "nextPerihelion": "2028",
+        "discoveredBy": "Klim Churyumov and Svetlana Gerasimenko",
+        "imageKeyword": "comet 67p rosetta"
+    },
+    {
+        "id": "neowise",
+        "name": "Comet NEOWISE",
+        "officialName": "C/2020 F3",
+        "type": "long_period",
+        "nucleusDiameterKm": 5,
+        "orbitalPeriodYears": 6766,
+        "perihelionAU": 0.29,
+        "aphelionAU": 720,
+        "description": "Comet NEOWISE was one of the brightest comets in the northern hemisphere since Hale-Bopp. It became visible to the naked eye in July 2020.",
+        "funFacts": [
+            "NEOWISE was the brightest comet since Hale-Bopp for northern observers.",
+            "Discovered by the NEOWISE space telescope in March 2020.",
+            "The comet won't return for nearly 7,000 years.",
+            "It passed closest to Earth on July 23, 2020."
+        ],
+        "lastPerihelion": "2020-07-03",
+        "nextPerihelion": "8786",
+        "discoveredBy": "NEOWISE space telescope",
+        "imageKeyword": "neowise comet 2020"
+    },
+    {
+        "id": "encke",
+        "name": "Comet Encke",
+        "officialName": "2P/Encke",
+        "type": "short_period",
+        "nucleusDiameterKm": 4.8,
+        "orbitalPeriodYears": 3.3,
+        "perihelionAU": 0.336,
+        "aphelionAU": 4.09,
+        "description": "Comet Encke has the shortest orbital period of any known comet. It is the parent body of the Taurid meteor shower.",
+        "funFacts": [
+            "Encke has the shortest period of any known comet at 3.3 years.",
+            "It was the second periodic comet to be recognized (after Halley).",
+            "The Taurid meteor shower comes from Encke's debris.",
+            "Its orbital period is decreasing due to outgassing."
+        ],
+        "lastPerihelion": "2023-10-22",
+        "nextPerihelion": "2027",
+        "discoveredBy": "Pierre Méchain",
+        "imageKeyword": "encke comet"
+    },
+    {
+        "id": "wild_2",
+        "name": "Comet Wild 2",
+        "officialName": "81P/Wild",
+        "type": "short_period",
+        "nucleusDiameterKm": 5.5,
+        "orbitalPeriodYears": 6.41,
+        "perihelionAU": 1.59,
+        "aphelionAU": 5.31,
+        "description": "Comet Wild 2 was the target of NASA's Stardust mission, which collected samples from the comet's coma and returned them to Earth in 2006.",
+        "funFacts": [
+            "Stardust returned the first comet samples to Earth.",
+            "The nucleus has a distinctive pockmarked surface.",
+            "Analysis revealed pre-solar grains older than our solar system.",
+            "The comet's current orbit was altered by Jupiter in 1974."
+        ],
+        "lastPerihelion": "2022-03-15",
+        "nextPerihelion": "2028",
+        "discoveredBy": "Paul Wild",
+        "imageKeyword": "wild 2 comet stardust"
+    },
+    {
+        "id": "shoemaker_levy_9",
+        "name": "Comet Shoemaker-Levy 9",
+        "officialName": "D/1993 F2",
+        "type": "short_period",
+        "nucleusDiameterKm": 1.8,
+        "orbitalPeriodYears": 2,
+        "perihelionAU": 5.38,
+        "aphelionAU": 6.86,
+        "description": "Shoemaker-Levy 9 collided with Jupiter in July 1994, marking the first direct observation of an extraterrestrial collision. The comet broke into 21 visible fragments.",
+        "funFacts": [
+            "First comet observed impacting a planet.",
+            "Jupiter's gravity broke it into 21 pieces before impact.",
+            "The impacts left scars on Jupiter larger than Earth.",
+            "The collision was watched by telescopes worldwide."
+        ],
+        "lastPerihelion": null,
+        "nextPerihelion": null,
+        "discoveredBy": "Carolyn and Eugene Shoemaker, David Levy",
+        "imageKeyword": "shoemaker-levy 9 jupiter impact"
+    },
+    {
+        "id": "tempel_1",
+        "name": "Comet Tempel 1",
+        "officialName": "9P/Tempel",
+        "type": "short_period",
+        "nucleusDiameterKm": 6,
+        "orbitalPeriodYears": 5.52,
+        "perihelionAU": 1.54,
+        "aphelionAU": 4.73,
+        "description": "Comet Tempel 1 was the target of NASA's Deep Impact mission, which deliberately crashed an impactor into the comet to study its interior composition.",
+        "funFacts": [
+            "Deep Impact mission crashed a probe into Tempel 1 in 2005.",
+            "The impact released material from beneath the surface.",
+            "The comet was later visited again by the Stardust mission.",
+            "It has a potato-like shape with a layered structure."
+        ],
+        "lastPerihelion": "2022-01-30",
+        "nextPerihelion": "2028",
+        "discoveredBy": "Wilhelm Tempel",
+        "imageKeyword": "tempel 1 comet deep impact"
+    }
+]

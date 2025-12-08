@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import '../../../core/models/planet_model.dart';
+import '../../../core/models/moon_model.dart';
 import '../../../core/services/planet_data_service.dart';
+import '../../../core/services/moon_data_service.dart';
 import '../../ar_explorer/presentation/ar_planet_screen.dart';
+import '../../moons/presentation/moon_detail_screen.dart';
 import 'planet_nasa_gallery_screen.dart';
 
 class PlanetDetailScreen extends StatefulWidget {
@@ -22,14 +25,31 @@ class PlanetDetailScreen extends StatefulWidget {
 class _PlanetDetailScreenState extends State<PlanetDetailScreen> {
   late Future<Planet?> _planetFuture;
   final PlanetDataService _dataService = PlanetDataService();
+  final MoonDataService _moonDataService = MoonDataService();
+  List<Moon> _moons = [];
 
   @override
   void initState() {
     super.initState();
     if (widget.planet != null) {
       _planetFuture = Future.value(widget.planet);
+      _loadMoons(widget.planet!.id);
     } else {
       _planetFuture = _dataService.getPlanetById(widget.planetId!);
+      _planetFuture.then((planet) {
+        if (planet != null) {
+          _loadMoons(planet.id);
+        }
+      });
+    }
+  }
+
+  Future<void> _loadMoons(String planetId) async {
+    final moons = await _moonDataService.getMoonsForPlanet(planetId);
+    if (mounted) {
+      setState(() {
+        _moons = moons;
+      });
     }
   }
 
@@ -71,6 +91,10 @@ class _PlanetDetailScreenState extends State<PlanetDetailScreen> {
                         title: 'Atmosphere',
                         content: planet.atmosphere!,
                       ),
+                    ],
+                    if (_moons.isNotEmpty || planet.moonNames.isNotEmpty) ...[
+                      const SizedBox(height: 24),
+                      _buildMoonsSection(context, planet),
                     ],
                     if (planet.funFacts.isNotEmpty) ...[
                       const SizedBox(height: 24),
@@ -141,8 +165,7 @@ class _PlanetDetailScreenState extends State<PlanetDetailScreen> {
                 _StatItem(
                     label: 'Rotation Period',
                     value: '${planet.rotationPeriodHours} hours'),
-                _StatItem(
-                    label: 'Gravity', value: '${planet.gravityMs2} m/s²'),
+                _StatItem(label: 'Gravity', value: '${planet.gravityMs2} m/s²'),
                 _StatItem(
                     label: 'Avg. Temp',
                     value: '${planet.averageTemperatureC}°C'),
@@ -188,6 +211,146 @@ class _PlanetDetailScreenState extends State<PlanetDetailScreen> {
           ),
         ],
       ),
+    );
+  }
+
+  Widget _buildMoonsSection(BuildContext context, Planet planet) {
+    final theme = Theme.of(context);
+
+    // Use loaded moons if available, otherwise use planet.moonNames
+    final displayMoons = _moons.isNotEmpty
+        ? _moons
+        : planet.moonNames.map((name) => null).toList();
+
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: theme.cardColor,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Icon(Icons.brightness_3, color: theme.colorScheme.secondary),
+              const SizedBox(width: 8),
+              Text(
+                'Moons (${planet.numberOfMoons})',
+                style: theme.textTheme.titleLarge?.copyWith(
+                  color: theme.colorScheme.secondary,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          if (planet.numberOfMoons == 0)
+            Text(
+              '${planet.name} has no natural satellites.',
+              style: theme.textTheme.bodyLarge?.copyWith(
+                fontStyle: FontStyle.italic,
+                color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
+              ),
+            )
+          else ...[
+            if (_moons.isNotEmpty)
+              Text(
+                'Tap on a moon to learn more:',
+                style: theme.textTheme.bodyMedium?.copyWith(
+                  color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
+                ),
+              )
+            else if (planet.moonNames.isNotEmpty)
+              Text(
+                'Major moons:',
+                style: theme.textTheme.bodyMedium?.copyWith(
+                  color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
+                ),
+              ),
+            const SizedBox(height: 12),
+            Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: _moons.isNotEmpty
+                  ? _moons.map((moon) => _buildMoonChip(context, moon)).toList()
+                  : planet.moonNames
+                      .map((name) =>
+                          _buildMoonNameChip(context, name, planet.id))
+                      .toList(),
+            ),
+            if (planet.numberOfMoons >
+                    (_moons.isEmpty
+                        ? planet.moonNames.length
+                        : _moons.length) &&
+                planet.moonNames.isNotEmpty)
+              Padding(
+                padding: const EdgeInsets.only(top: 12),
+                child: Text(
+                  '...and ${planet.numberOfMoons - (planet.moonNames.length)} more',
+                  style: theme.textTheme.bodySmall?.copyWith(
+                    fontStyle: FontStyle.italic,
+                    color: theme.colorScheme.onSurface.withValues(alpha: 0.5),
+                  ),
+                ),
+              ),
+          ],
+        ],
+      ),
+    );
+  }
+
+  Widget _buildMoonChip(BuildContext context, Moon moon) {
+    return ActionChip(
+      avatar: const Icon(Icons.brightness_3, size: 16),
+      label: Text(moon.name),
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => MoonDetailScreen(moon: moon),
+          ),
+        );
+      },
+      backgroundColor:
+          Theme.of(context).colorScheme.primaryContainer.withValues(alpha: 0.3),
+      side: BorderSide(
+          color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.5)),
+    );
+  }
+
+  Widget _buildMoonNameChip(
+      BuildContext context, String moonName, String planetId) {
+    return ActionChip(
+      avatar: const Icon(Icons.brightness_3, size: 16),
+      label: Text(moonName),
+      onPressed: () async {
+        // Try to find moon by matching name
+        final moons = await _moonDataService.getAllMoons();
+        final moon = moons
+            .where((m) =>
+                m.name.toLowerCase().contains(moonName.toLowerCase()) ||
+                moonName
+                    .toLowerCase()
+                    .contains(m.name.split(' ').first.toLowerCase()))
+            .firstOrNull;
+
+        if (moon != null && context.mounted) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => MoonDetailScreen(moon: moon),
+            ),
+          );
+        } else if (context.mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('Details for $moonName coming soon!')),
+          );
+        }
+      },
+      backgroundColor:
+          Theme.of(context).colorScheme.primaryContainer.withValues(alpha: 0.3),
+      side: BorderSide(
+          color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.5)),
     );
   }
 
@@ -240,7 +403,7 @@ class _PlanetDetailScreenState extends State<PlanetDetailScreen> {
               context,
               MaterialPageRoute(
                 builder: (context) => PlanetNasaGalleryScreen(
-                  planetName: widget.planet?.name ?? 'Space', // Fallback if planet is null, though it shouldn't be here
+                  planetName: widget.planet?.name ?? 'Space',
                 ),
               ),
             );
@@ -284,7 +447,7 @@ class _StatItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return SizedBox(
-      width: 150, // Fixed width for grid-like alignment
+      width: 150,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

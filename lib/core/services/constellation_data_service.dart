@@ -5,7 +5,7 @@ import '../models/constellation_model.dart';
 class ConstellationDataService {
   static final ConstellationDataService _instance =
       ConstellationDataService._internal();
-  
+
   List<Constellation>? _cachedConstellations;
 
   factory ConstellationDataService() {
@@ -26,9 +26,8 @@ class ConstellationDataService {
           await rootBundle.loadString('assets/data/constellations.json');
       final List<dynamic> jsonList = json.decode(jsonString);
 
-      _cachedConstellations = jsonList
-          .map((jsonItem) => Constellation.fromJson(jsonItem))
-          .toList();
+      _cachedConstellations =
+          jsonList.map((jsonItem) => Constellation.fromJson(jsonItem)).toList();
 
       return _cachedConstellations!;
     } catch (e) {

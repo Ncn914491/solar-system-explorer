@@ -1,0 +1,72 @@
+[
+    {
+        "id": "andromeda",
+        "name": "Andromeda Galaxy",
+        "type": "Spiral Galaxy",
+        "constellation": "Andromeda",
+        "distance": "2.537 million light-years",
+        "description": "Also known as Messier 31, M31, or NGC 224, it is the nearest major galaxy to the Milky Way. It contains approximately one trillion stars, more than twice the number of the Milky Way.",
+        "funFacts": [
+            "It is on a collision course with the Milky Way, expecting to merge in 4.5 billion years.",
+            "It is visible to the naked eye on moonless nights.",
+            "The galaxy spans about 220,000 light-years across."
+        ],
+        "imageKeyword": "Andromeda Galaxy"
+    },
+    {
+        "id": "orion_nebula",
+        "name": "Orion Nebula",
+        "type": "Diffuse Nebula",
+        "constellation": "Orion",
+        "distance": "1,344 light-years",
+        "description": "The Orion Nebula (Messier 42) is one of the brightest nebulae and is visible to the naked eye in the night sky. It is situated in the Milky Way, south of Orion's Belt. It is one of the closest regions of massive star formation to Earth.",
+        "funFacts": [
+            "It is a stellar nursery where new stars are being born.",
+            "The nebula is about 24 light-years across.",
+            "The core contains the Trapezium cluster, four massive young stars."
+        ],
+        "imageKeyword": "Orion Nebula"
+    },
+    {
+        "id": "crab_nebula",
+        "name": "Crab Nebula",
+        "type": "Supernova Remnant",
+        "constellation": "Taurus",
+        "distance": "6,500 light-years",
+        "description": "The Crab Nebula (Messier 1) is a supernova remnant and pulsar wind nebula. It corresponds to a bright supernova recorded by Chinese astronomers in 1054 AD.",
+        "funFacts": [
+            "At its center lies the Crab Pulsar, a neutron star spinning 30 times per second.",
+            "It is expanding at a rate of 1,500 km per second.",
+            "It emits radiation across almost the entire electromagnetic spectrum."
+        ],
+        "imageKeyword": "Crab Nebula"
+    },
+    {
+        "id": "pleiades",
+        "name": "Pleiades (Seven Sisters)",
+        "type": "Open Cluster",
+        "constellation": "Taurus",
+        "distance": "444 light-years",
+        "description": "The Pleiades (Messier 45) is an open star cluster dominated by hot blue luminous stars that have formed within the last 100 million years. It is one of the nearest star clusters to Earth.",
+        "funFacts": [
+            "Known as the 'Seven Sisters' across many ancient cultures.",
+            "Contains over 1,000 statistically confirmed members.",
+            "The faint reflection nebulosity around the stars is just dust the cluster is passing through."
+        ],
+        "imageKeyword": "Pleiades star cluster"
+    },
+    {
+        "id": "pillars_creation",
+        "name": "Pillars of Creation",
+        "type": "Nebula Region",
+        "constellation": "Serpens",
+        "distance": "7,000 light-years",
+        "description": "Part of the Eagle Nebula, these elephant trunks of interstellar gas and dust were made famous by the Hubble Space Telescope. They are active regions of star formation.",
+        "funFacts": [
+            "The pillars are composed of cool molecular hydrogen and dust.",
+            "The tallest pillar is about 4 light-years long.",
+            "They are being eroded by photoevaporation from nearby hot stars."
+        ],
+        "imageKeyword": "Pillars of Creation"
+    }
+]

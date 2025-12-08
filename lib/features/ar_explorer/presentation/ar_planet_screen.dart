@@ -139,7 +139,7 @@ class _ArPlanetScreenState extends State<ArPlanetScreen> {
   Future<void> onPlaneOrPointTap(List<ARHitTestResult> hitTestResults) async {
     var singleHitTestResult = hitTestResults.firstWhere(
         (hitTestResult) => hitTestResult.type == ARHitTestResultType.plane);
-    
+
     // If we already placed a planet, maybe we want to move it or add another?
     // For simplicity, let's remove old ones and place a new one.
     for (var anchor in anchors) {
@@ -150,10 +150,10 @@ class _ArPlanetScreenState extends State<ArPlanetScreen> {
     var newAnchor =
         ARPlaneAnchor(transformation: singleHitTestResult.worldTransform);
     bool? didAddAnchor = await arAnchorManager!.addAnchor(newAnchor);
-    
+
     if (didAddAnchor == true) {
       anchors.add(newAnchor);
-      
+
       // Add a sphere node
       // Note: In a real app, we would load a GLB/GLTF model of the specific planet.
       // For this MVP, we use a simple sphere provided by the plugin or a web sphere.
@@ -168,17 +168,19 @@ class _ArPlanetScreenState extends State<ArPlanetScreen> {
       // or just fail gracefully if we can't load it.
       // Better yet, let's assume we have a 'sphere.glb' in assets (we don't),
       // so we will use a remote URL for a generic planet model.
-      
+
       // Using a reliable public GLB model of the Moon for testing.
       var newNode = ARNode(
         type: NodeType.webGLB,
-        uri: "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Duck/glTF-Binary/Duck.glb", // Placeholder Duck for now as it's standard
+        uri:
+            "https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/Duck/glTF-Binary/Duck.glb", // Placeholder Duck for now as it's standard
         scale: vector.Vector3(0.2, 0.2, 0.2),
         position: vector.Vector3(0.0, 0.0, 0.0),
         rotation: vector.Vector4(1.0, 0.0, 0.0, 0.0),
       );
-      
-      bool? didAddNodeToAnchor = await arObjectManager!.addNode(newNode, planeAnchor: newAnchor);
+
+      bool? didAddNodeToAnchor =
+          await arObjectManager!.addNode(newNode, planeAnchor: newAnchor);
       if (didAddNodeToAnchor == true) {
         nodes.add(newNode);
         if (mounted) {

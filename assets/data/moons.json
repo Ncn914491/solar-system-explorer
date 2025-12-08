@@ -1,0 +1,560 @@
+[
+  {
+    "id": "moon",
+    "name": "Moon",
+    "alternativeName": "Luna",
+    "planetId": "earth",
+    "diameterKm": 3474,
+    "distanceFromPlanetKm": 384400,
+    "orbitalPeriodDays": 27.3,
+    "description": "The Moon is Earth's only natural satellite and the fifth-largest moon in the Solar System. It is the brightest and largest object in our night sky, making Earth a more livable planet by moderating our home planet's wobble on its axis.",
+    "funFacts": [
+      "The Moon is slowly drifting away from Earth at about 3.8 cm per year.",
+      "Only 12 people have ever walked on the Moon, all Americans.",
+      "The same side of the Moon always faces Earth due to tidal locking."
+    ],
+    "discoveredBy": "Known since ancient times",
+    "discoveryYear": null,
+    "imageKeyword": "earth moon luna"
+  },
+  {
+    "id": "phobos",
+    "name": "Phobos",
+    "alternativeName": null,
+    "planetId": "mars",
+    "diameterKm": 22.4,
+    "distanceFromPlanetKm": 9376,
+    "orbitalPeriodDays": 0.32,
+    "description": "Phobos is the larger and closer of Mars' two moons. It is one of the smallest moons in the solar system and orbits so close to Mars that it rises and sets twice each Martian day.",
+    "funFacts": [
+      "Phobos orbits Mars faster than Mars rotates.",
+      "This moon will impact Mars in about 50 million years.",
+      "It has a massive crater named Stickney covering nearly half its surface."
+    ],
+    "discoveredBy": "Asaph Hall",
+    "discoveryYear": 1877,
+    "imageKeyword": "phobos mars moon"
+  },
+  {
+    "id": "deimos",
+    "name": "Deimos",
+    "alternativeName": null,
+    "planetId": "mars",
+    "diameterKm": 12.4,
+    "distanceFromPlanetKm": 23460,
+    "orbitalPeriodDays": 1.26,
+    "description": "Deimos is the smaller and outermost of Mars' two moons. Named after the Greek god of terror, it has a smooth appearance due to a thick layer of regolith.",
+    "funFacts": [
+      "Deimos rises in the east and sets in the west, like a normal moon.",
+      "It takes 30 hours to rise, cross the sky, and set.",
+      "Deimos is one of the smallest known moons in the solar system."
+    ],
+    "discoveredBy": "Asaph Hall",
+    "discoveryYear": 1877,
+    "imageKeyword": "deimos mars moon"
+  },
+  {
+    "id": "io",
+    "name": "Io",
+    "alternativeName": null,
+    "planetId": "jupiter",
+    "diameterKm": 3643,
+    "distanceFromPlanetKm": 421700,
+    "orbitalPeriodDays": 1.77,
+    "description": "Io is the most volcanically active body in the solar system. The volcanic activity is caused by tidal heating from Jupiter's massive gravitational pull.",
+    "funFacts": [
+      "Io has over 400 active volcanoes.",
+      "Some volcanic plumes rise 500 km above the surface.",
+      "Its surface is constantly being reshaped by volcanic activity."
+    ],
+    "discoveredBy": "Galileo Galilei",
+    "discoveryYear": 1610,
+    "imageKeyword": "io jupiter moon volcanic"
+  },
+  {
+    "id": "europa",
+    "name": "Europa",
+    "alternativeName": null,
+    "planetId": "jupiter",
+    "diameterKm": 3122,
+    "distanceFromPlanetKm": 670900,
+    "orbitalPeriodDays": 3.55,
+    "description": "Europa is one of Jupiter's Galilean moons. Beneath its icy surface lies a vast ocean of liquid water, making it one of the most promising places to search for extraterrestrial life.",
+    "funFacts": [
+      "Europa may have more water than all of Earth's oceans combined.",
+      "Its ice shell may be 10-30 km thick.",
+      "NASA plans to send a spacecraft called Europa Clipper to study this moon."
+    ],
+    "discoveredBy": "Galileo Galilei",
+    "discoveryYear": 1610,
+    "imageKeyword": "europa jupiter moon ice"
+  },
+  {
+    "id": "ganymede",
+    "name": "Ganymede",
+    "alternativeName": null,
+    "planetId": "jupiter",
+    "diameterKm": 5268,
+    "distanceFromPlanetKm": 1070400,
+    "orbitalPeriodDays": 7.15,
+    "description": "Ganymede is the largest moon in the solar system, even larger than the planet Mercury. It is the only moon known to have its own magnetic field.",
+    "funFacts": [
+      "If Ganymede orbited the Sun, it would be classified as a planet.",
+      "It has both old, cratered regions and younger grooved terrain.",
+      "Ganymede is the only moon with its own magnetosphere."
+    ],
+    "discoveredBy": "Galileo Galilei",
+    "discoveryYear": 1610,
+    "imageKeyword": "ganymede jupiter moon largest"
+  },
+  {
+    "id": "callisto",
+    "name": "Callisto",
+    "alternativeName": null,
+    "planetId": "jupiter",
+    "diameterKm": 4821,
+    "distanceFromPlanetKm": 1882700,
+    "orbitalPeriodDays": 16.69,
+    "description": "Callisto is the second-largest moon of Jupiter. It has the oldest and most heavily cratered surface of any object in the solar system.",
+    "funFacts": [
+      "Callisto has about the same size as Mercury but only one-third the mass.",
+      "It is considered a potential base for human exploration.",
+      "Its surface hasn't changed much in 4 billion years."
+    ],
+    "discoveredBy": "Galileo Galilei",
+    "discoveryYear": 1610,
+    "imageKeyword": "callisto jupiter moon cratered"
+  },
+  {
+    "id": "amalthea",
+    "name": "Amalthea",
+    "alternativeName": null,
+    "planetId": "jupiter",
+    "diameterKm": 167,
+    "distanceFromPlanetKm": 181400,
+    "orbitalPeriodDays": 0.5,
+    "description": "Amalthea is the fifth moon of Jupiter and the largest of the inner moons. It has an irregular, potato-like shape and is reddish in color.",
+    "funFacts": [
+      "Amalthea is the reddest object in the solar system.",
+      "It radiates more heat than it receives from the Sun.",
+      "Named after the goat that nursed infant Zeus."
+    ],
+    "discoveredBy": "Edward Emerson Barnard",
+    "discoveryYear": 1892,
+    "imageKeyword": "amalthea jupiter moon"
+  },
+  {
+    "id": "himalia",
+    "name": "Himalia",
+    "alternativeName": null,
+    "planetId": "jupiter",
+    "diameterKm": 170,
+    "distanceFromPlanetKm": 11480000,
+    "orbitalPeriodDays": 250.6,
+    "description": "Himalia is the largest irregular moon of Jupiter. It leads a group of moons known as the Himalia group which share similar orbits.",
+    "funFacts": [
+      "Himalia is thought to be a captured asteroid.",
+      "It was named after a nymph who bore three sons of Zeus.",
+      "Its surface is very dark, reflecting only 3% of light."
+    ],
+    "discoveredBy": "Charles Dillon Perrine",
+    "discoveryYear": 1904,
+    "imageKeyword": "himalia jupiter moon"
+  },
+  {
+    "id": "titan",
+    "name": "Titan",
+    "alternativeName": null,
+    "planetId": "saturn",
+    "diameterKm": 5150,
+    "distanceFromPlanetKm": 1221870,
+    "orbitalPeriodDays": 15.95,
+    "description": "Titan is Saturn's largest moon and the second-largest in the solar system. It is the only moon with a dense atmosphere and surface liquids - lakes of liquid methane and ethane.",
+    "funFacts": [
+      "Titan's atmosphere is denser than Earth's.",
+      "The Huygens probe landed on Titan in 2005.",
+      "Titan has weather, seasons, and rain of liquid methane."
+    ],
+    "discoveredBy": "Christiaan Huygens",
+    "discoveryYear": 1655,
+    "imageKeyword": "titan saturn moon atmosphere"
+  },
+  {
+    "id": "enceladus",
+    "name": "Enceladus",
+    "alternativeName": null,
+    "planetId": "saturn",
+    "diameterKm": 504,
+    "distanceFromPlanetKm": 237948,
+    "orbitalPeriodDays": 1.37,
+    "description": "Enceladus shoots geysers of water vapor and ice into space through cracks near its south pole, suggesting a subsurface ocean with potential for life.",
+    "funFacts": [
+      "Enceladus is the whitest, most reflective object in the solar system.",
+      "Its geysers contribute material to Saturn's E ring.",
+      "Scientists believe it may harbor conditions suitable for life."
+    ],
+    "discoveredBy": "William Herschel",
+    "discoveryYear": 1789,
+    "imageKeyword": "enceladus saturn moon geysers"
+  },
+  {
+    "id": "rhea",
+    "name": "Rhea",
+    "alternativeName": null,
+    "planetId": "saturn",
+    "diameterKm": 1528,
+    "distanceFromPlanetKm": 527040,
+    "orbitalPeriodDays": 4.52,
+    "description": "Rhea is Saturn's second-largest moon. It is an icy body with a heavily cratered surface and may have a tenuous ring system of its own.",
+    "funFacts": [
+      "Rhea may be the only moon with its own ring system.",
+      "It is composed mostly of water ice.",
+      "Named after the Titan mother of the Greek gods."
+    ],
+    "discoveredBy": "Giovanni Cassini",
+    "discoveryYear": 1672,
+    "imageKeyword": "rhea saturn moon"
+  },
+  {
+    "id": "mimas",
+    "name": "Mimas",
+    "alternativeName": null,
+    "planetId": "saturn",
+    "diameterKm": 396,
+    "distanceFromPlanetKm": 185520,
+    "orbitalPeriodDays": 0.94,
+    "description": "Mimas is famous for its enormous Herschel Crater, which makes it resemble the Death Star from Star Wars. It is the smallest known astronomical body that is round due to self-gravitation.",
+    "funFacts": [
+      "Mimas looks like the Death Star from Star Wars.",
+      "The Herschel Crater is nearly one-third of Mimas's diameter.",
+      "The impact that created Herschel nearly destroyed Mimas."
+    ],
+    "discoveredBy": "William Herschel",
+    "discoveryYear": 1789,
+    "imageKeyword": "mimas saturn moon death star"
+  },
+  {
+    "id": "iapetus",
+    "name": "Iapetus",
+    "alternativeName": null,
+    "planetId": "saturn",
+    "diameterKm": 1469,
+    "distanceFromPlanetKm": 3560820,
+    "orbitalPeriodDays": 79.32,
+    "description": "Iapetus is famous for its two-toned coloration - one hemisphere is extremely dark while the other is very bright. It also has a puzzling equatorial ridge.",
+    "funFacts": [
+      "One side of Iapetus is 10 times brighter than the other.",
+      "Its equatorial ridge reaches 20 km high in some places.",
+      "The dark material may come from dust swept up from other moons."
+    ],
+    "discoveredBy": "Giovanni Cassini",
+    "discoveryYear": 1671,
+    "imageKeyword": "iapetus saturn moon two-tone"
+  },
+  {
+    "id": "tethys",
+    "name": "Tethys",
+    "alternativeName": null,
+    "planetId": "saturn",
+    "diameterKm": 1062,
+    "distanceFromPlanetKm": 294660,
+    "orbitalPeriodDays": 1.89,
+    "description": "Tethys is composed almost entirely of water ice. It features a massive impact crater called Odysseus and a huge valley called Ithaca Chasma.",
+    "funFacts": [
+      "Tethys has the lowest density of Saturn's major moons.",
+      "Ithaca Chasma is 2000 km long, spanning 3/4 of the moon.",
+      "Two tiny moons share Tethys's orbit, one ahead and one behind."
+    ],
+    "discoveredBy": "Giovanni Cassini",
+    "discoveryYear": 1684,
+    "imageKeyword": "tethys saturn moon"
+  },
+  {
+    "id": "dione",
+    "name": "Dione",
+    "alternativeName": null,
+    "planetId": "saturn",
+    "diameterKm": 1123,
+    "distanceFromPlanetKm": 377400,
+    "orbitalPeriodDays": 2.74,
+    "description": "Dione is a small ice world with bright ice cliffs and a wispy terrain of ice canyons. It may have a subsurface ocean.",
+    "funFacts": [
+      "Dione has bright ice cliffs created by tectonic fractures.",
+      "Two small moons share its orbit - Helene and Polydeuces.",
+      "Evidence suggests a possible subsurface ocean."
+    ],
+    "discoveredBy": "Giovanni Cassini",
+    "discoveryYear": 1684,
+    "imageKeyword": "dione saturn moon"
+  },
+  {
+    "id": "hyperion",
+    "name": "Hyperion",
+    "alternativeName": null,
+    "planetId": "saturn",
+    "diameterKm": 270,
+    "distanceFromPlanetKm": 1481000,
+    "orbitalPeriodDays": 21.28,
+    "description": "Hyperion is one of the largest irregularly shaped bodies in the Solar System. Its sponge-like appearance and chaotic rotation make it unique.",
+    "funFacts": [
+      "Hyperion tumbles chaotically as it orbits Saturn.",
+      "Its sponge-like surface is covered with deep craters.",
+      "The low density suggests it's mostly water ice with voids."
+    ],
+    "discoveredBy": "William Cranch Bond",
+    "discoveryYear": 1848,
+    "imageKeyword": "hyperion saturn moon sponge"
+  },
+  {
+    "id": "phoebe",
+    "name": "Phoebe",
+    "alternativeName": null,
+    "planetId": "saturn",
+    "diameterKm": 213,
+    "distanceFromPlanetKm": 12952000,
+    "orbitalPeriodDays": 550.5,
+    "description": "Phoebe is an irregular moon that orbits Saturn in the opposite direction. It is thought to be a captured Kuiper Belt object.",
+    "funFacts": [
+      "Phoebe orbits backwards (retrograde) compared to Saturn's rotation.",
+      "It may be a captured primordial object from the outer solar system.",
+      "Phoebe is heavily cratered and very dark."
+    ],
+    "discoveredBy": "William Henry Pickering",
+    "discoveryYear": 1899,
+    "imageKeyword": "phoebe saturn moon"
+  },
+  {
+    "id": "miranda",
+    "name": "Miranda",
+    "alternativeName": null,
+    "planetId": "uranus",
+    "diameterKm": 472,
+    "distanceFromPlanetKm": 129390,
+    "orbitalPeriodDays": 1.41,
+    "description": "Miranda has one of the most extreme and varied topographies in the solar system, with giant canyons up to 20 km deep.",
+    "funFacts": [
+      "Miranda has cliffs 5-10 times as deep as the Grand Canyon.",
+      "Its bizarre surface may be the result of being shattered and reassembled.",
+      "Named after the heroine of Shakespeare's The Tempest."
+    ],
+    "discoveredBy": "Gerard Kuiper",
+    "discoveryYear": 1948,
+    "imageKeyword": "miranda uranus moon"
+  },
+  {
+    "id": "ariel",
+    "name": "Ariel",
+    "alternativeName": null,
+    "planetId": "uranus",
+    "diameterKm": 1158,
+    "distanceFromPlanetKm": 190900,
+    "orbitalPeriodDays": 2.52,
+    "description": "Ariel is possibly the brightest of Uranus's moons. It has the youngest surface featuring canyons and grooves suggesting past geological activity.",
+    "funFacts": [
+      "Ariel has the most recent geological activity among Uranus's moons.",
+      "Its surface is covered with water ice.",
+      "Named after a character in Shakespeare's The Tempest."
+    ],
+    "discoveredBy": "William Lassell",
+    "discoveryYear": 1851,
+    "imageKeyword": "ariel uranus moon"
+  },
+  {
+    "id": "umbriel",
+    "name": "Umbriel",
+    "alternativeName": null,
+    "planetId": "uranus",
+    "diameterKm": 1169,
+    "distanceFromPlanetKm": 266000,
+    "orbitalPeriodDays": 4.14,
+    "description": "Umbriel is the darkest of Uranus's large moons. It has an ancient, heavily cratered surface showing little evidence of geological activity.",
+    "funFacts": [
+      "Umbriel has a mysterious bright ring on its surface called Wunda.",
+      "It reflects only about 16% of the light that hits it.",
+      "The origin of its dark surface is still unknown."
+    ],
+    "discoveredBy": "William Lassell",
+    "discoveryYear": 1851,
+    "imageKeyword": "umbriel uranus moon"
+  },
+  {
+    "id": "titania",
+    "name": "Titania",
+    "alternativeName": null,
+    "planetId": "uranus",
+    "diameterKm": 1578,
+    "distanceFromPlanetKm": 435910,
+    "orbitalPeriodDays": 8.71,
+    "description": "Titania is the largest moon of Uranus and the eighth-largest in the solar system. It has huge fault valleys and impact craters.",
+    "funFacts": [
+      "Titania is named after the queen of fairies in A Midsummer Night's Dream.",
+      "Some canyon systems extend for over 1,000 km.",
+      "It may have a thin carbon dioxide atmosphere."
+    ],
+    "discoveredBy": "William Herschel",
+    "discoveryYear": 1787,
+    "imageKeyword": "titania uranus moon largest"
+  },
+  {
+    "id": "oberon",
+    "name": "Oberon",
+    "alternativeName": null,
+    "planetId": "uranus",
+    "diameterKm": 1523,
+    "distanceFromPlanetKm": 583520,
+    "orbitalPeriodDays": 13.46,
+    "description": "Oberon is the outermost major moon of Uranus with an old, heavily cratered surface and dark material on crater floors.",
+    "funFacts": [
+      "Named after the king of fairies in A Midsummer Night's Dream.",
+      "Some impact craters show signs of icy volcanism.",
+      "Oberon's surface is the most heavily cratered among Uranus's moons."
+    ],
+    "discoveredBy": "William Herschel",
+    "discoveryYear": 1787,
+    "imageKeyword": "oberon uranus moon"
+  },
+  {
+    "id": "triton",
+    "name": "Triton",
+    "alternativeName": null,
+    "planetId": "neptune",
+    "diameterKm": 2707,
+    "distanceFromPlanetKm": 354759,
+    "orbitalPeriodDays": 5.88,
+    "description": "Triton is Neptune's largest moon with a retrograde orbit, suggesting it was captured from the Kuiper Belt. It has active nitrogen geysers.",
+    "funFacts": [
+      "Triton orbits Neptune backwards compared to Neptune's rotation.",
+      "Its geysers shoot nitrogen 8 km into the thin atmosphere.",
+      "Triton will be torn apart by Neptune's gravity in about 3.6 billion years."
+    ],
+    "discoveredBy": "William Lassell",
+    "discoveryYear": 1846,
+    "imageKeyword": "triton neptune moon geysers"
+  },
+  {
+    "id": "nereid",
+    "name": "Nereid",
+    "alternativeName": null,
+    "planetId": "neptune",
+    "diameterKm": 340,
+    "distanceFromPlanetKm": 5513787,
+    "orbitalPeriodDays": 360.13,
+    "description": "Nereid has one of the most eccentric orbits of any known moon. It may be a captured asteroid or Kuiper Belt object.",
+    "funFacts": [
+      "Nereid has the most eccentric orbit of any moon.",
+      "Its distance from Neptune varies from 1.4 to 9.6 million km.",
+      "Very little is known about Nereid due to lack of close observations."
+    ],
+    "discoveredBy": "Gerard Kuiper",
+    "discoveryYear": 1949,
+    "imageKeyword": "nereid neptune moon"
+  },
+  {
+    "id": "proteus",
+    "name": "Proteus",
+    "alternativeName": null,
+    "planetId": "neptune",
+    "diameterKm": 420,
+    "distanceFromPlanetKm": 117647,
+    "orbitalPeriodDays": 1.12,
+    "description": "Proteus is Neptune's second-largest moon and the largest irregular moon in the solar system. It was discovered by Voyager 2.",
+    "funFacts": [
+      "Proteus is almost as large as it can be without becoming spherical.",
+      "It was not discovered from Earth because it's too close to Neptune.",
+      "Named after a shape-shifting sea god in Greek mythology."
+    ],
+    "discoveredBy": "Voyager 2",
+    "discoveryYear": 1989,
+    "imageKeyword": "proteus neptune moon"
+  },
+  {
+    "id": "charon",
+    "name": "Charon",
+    "alternativeName": null,
+    "planetId": "pluto",
+    "diameterKm": 1212,
+    "distanceFromPlanetKm": 19591,
+    "orbitalPeriodDays": 6.39,
+    "description": "Charon is Pluto's largest moon and is so large relative to Pluto that the pair are sometimes called a double dwarf planet system.",
+    "funFacts": [
+      "Charon is about half the size of Pluto.",
+      "Some scientists consider Pluto-Charon a double dwarf planet system.",
+      "Charon has a reddish polar cap likely made of organic molecules."
+    ],
+    "discoveredBy": "James Christy",
+    "discoveryYear": 1978,
+    "imageKeyword": "charon pluto moon"
+  },
+  {
+    "id": "nix",
+    "name": "Nix",
+    "alternativeName": null,
+    "planetId": "pluto",
+    "diameterKm": 49.8,
+    "distanceFromPlanetKm": 48694,
+    "orbitalPeriodDays": 24.85,
+    "description": "Nix is a small moon of Pluto with an irregular, elongated shape that rotates chaotically.",
+    "funFacts": [
+      "Nix rotates chaotically due to Pluto and Charon's gravity.",
+      "Named after the Greek goddess of darkness and night.",
+      "Its surface is highly reflective, likely covered in water ice."
+    ],
+    "discoveredBy": "Hubble Space Telescope",
+    "discoveryYear": 2005,
+    "imageKeyword": "nix pluto moon"
+  },
+  {
+    "id": "hydra",
+    "name": "Hydra",
+    "alternativeName": null,
+    "planetId": "pluto",
+    "diameterKm": 50.9,
+    "distanceFromPlanetKm": 64738,
+    "orbitalPeriodDays": 38.2,
+    "description": "Hydra is Pluto's outermost known moon with an irregular potato-like shape that spins very rapidly.",
+    "funFacts": [
+      "Hydra spins 89 times during one orbit around Pluto.",
+      "Named after the nine-headed serpent of Greek mythology.",
+      "New Horizons revealed its irregular, potato-like shape."
+    ],
+    "discoveredBy": "Hubble Space Telescope",
+    "discoveryYear": 2005,
+    "imageKeyword": "hydra pluto moon"
+  },
+  {
+    "id": "kerberos",
+    "name": "Kerberos",
+    "alternativeName": null,
+    "planetId": "pluto",
+    "diameterKm": 12,
+    "distanceFromPlanetKm": 57783,
+    "orbitalPeriodDays": 32.17,
+    "description": "Kerberos is a tiny moon of Pluto discovered by the Hubble Space Telescope. It appears to be a double-lobed object.",
+    "funFacts": [
+      "Kerberos has a strange double-lobed shape.",
+      "Named after the three-headed dog guarding the underworld.",
+      "Much smaller than expected based on its gravitational influence."
+    ],
+    "discoveredBy": "Hubble Space Telescope",
+    "discoveryYear": 2011,
+    "imageKeyword": "kerberos pluto moon"
+  },
+  {
+    "id": "styx",
+    "name": "Styx",
+    "alternativeName": null,
+    "planetId": "pluto",
+    "diameterKm": 10,
+    "distanceFromPlanetKm": 42656,
+    "orbitalPeriodDays": 20.16,
+    "description": "Styx is Pluto's smallest known moon. It orbits between Charon and Nix.",
+    "funFacts": [
+      "Styx is the smallest moon of Pluto at only 10 km across.",
+      "Named after the river separating Earth from the underworld.",
+      "Discovered just one year before New Horizons arrived at Pluto."
+    ],
+    "discoveredBy": "Hubble Space Telescope",
+    "discoveryYear": 2012,
+    "imageKeyword": "styx pluto moon"
+  }
+]

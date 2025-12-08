@@ -1,0 +1,192 @@
+[
+    {
+        "id": "ceres",
+        "name": "Ceres",
+        "type": "dwarf_planet",
+        "diameterKm": 940,
+        "orbitType": "main_belt",
+        "orbitalPeriodYears": 4.6,
+        "distanceFromSunAU": 2.77,
+        "description": "Ceres is the largest object in the asteroid belt between Mars and Jupiter. It is the only dwarf planet located in the inner solar system and contains about a third of all mass in the asteroid belt.",
+        "funFacts": [
+            "Ceres was the first asteroid ever discovered, in 1801.",
+            "It has a thin atmosphere and possible subsurface ocean.",
+            "NASA's Dawn spacecraft orbited Ceres from 2015-2018.",
+            "Bright spots on Ceres are salt deposits from an underground ocean."
+        ],
+        "discoveredBy": "Giuseppe Piazzi",
+        "discoveryYear": 1801,
+        "imageKeyword": "ceres dwarf planet"
+    },
+    {
+        "id": "vesta",
+        "name": "Vesta",
+        "type": "asteroid",
+        "diameterKm": 525,
+        "orbitType": "main_belt",
+        "orbitalPeriodYears": 3.63,
+        "distanceFromSunAU": 2.36,
+        "description": "Vesta is the second-largest asteroid in the asteroid belt. It is one of the few asteroids visible to the naked eye and has a differentiated interior like a planet.",
+        "funFacts": [
+            "Vesta is the brightest asteroid visible from Earth.",
+            "It has a giant crater called Rheasilvia at its south pole.",
+            "Meteorites from Vesta have landed on Earth.",
+            "NASA's Dawn spacecraft studied Vesta in 2011-2012."
+        ],
+        "discoveredBy": "Heinrich Wilhelm Olbers",
+        "discoveryYear": 1807,
+        "imageKeyword": "vesta asteroid"
+    },
+    {
+        "id": "pallas",
+        "name": "Pallas",
+        "type": "asteroid",
+        "diameterKm": 512,
+        "orbitType": "main_belt",
+        "orbitalPeriodYears": 4.62,
+        "distanceFromSunAU": 2.77,
+        "description": "Pallas is the third-largest asteroid in the asteroid belt. Its highly inclined orbit makes it difficult to study with spacecraft.",
+        "funFacts": [
+            "Pallas has the most tilted orbit of any large asteroid.",
+            "It was once considered a candidate for dwarf planet status.",
+            "Its surface is rich in silicates and iron.",
+            "No spacecraft has ever visited Pallas."
+        ],
+        "discoveredBy": "Heinrich Wilhelm Olbers",
+        "discoveryYear": 1802,
+        "imageKeyword": "pallas asteroid"
+    },
+    {
+        "id": "hygiea",
+        "name": "Hygiea",
+        "type": "asteroid",
+        "diameterKm": 434,
+        "orbitType": "main_belt",
+        "orbitalPeriodYears": 5.56,
+        "distanceFromSunAU": 3.14,
+        "description": "Hygiea is the fourth-largest asteroid in the main belt. It is nearly spherical and is being considered for dwarf planet classification.",
+        "funFacts": [
+            "Hygiea may qualify as a dwarf planet due to its round shape.",
+            "It is the largest carbonaceous asteroid.",
+            "Named after the Greek goddess of health.",
+            "It's the largest member of the Hygiea family of asteroids."
+        ],
+        "discoveredBy": "Annibale de Gasparis",
+        "discoveryYear": 1849,
+        "imageKeyword": "hygiea asteroid"
+    },
+    {
+        "id": "eros",
+        "name": "Eros",
+        "type": "asteroid",
+        "diameterKm": 16.8,
+        "orbitType": "near_earth",
+        "orbitalPeriodYears": 1.76,
+        "distanceFromSunAU": 1.46,
+        "description": "Eros is one of the largest near-Earth asteroids. It was the first asteroid to be orbited and landed upon by a spacecraft (NEAR Shoemaker).",
+        "funFacts": [
+            "NEAR Shoemaker spacecraft landed on Eros in 2001.",
+            "Eros has a peanut or banana-like shape.",
+            "It occasionally passes closer to the Sun than Mars.",
+            "Named after the Greek god of love."
+        ],
+        "discoveredBy": "Gustav Witt",
+        "discoveryYear": 1898,
+        "imageKeyword": "eros asteroid near-earth"
+    },
+    {
+        "id": "bennu",
+        "name": "Bennu",
+        "type": "asteroid",
+        "diameterKm": 0.49,
+        "orbitType": "near_earth",
+        "orbitalPeriodYears": 1.2,
+        "distanceFromSunAU": 1.13,
+        "description": "Bennu is a carbon-rich near-Earth asteroid. NASA's OSIRIS-REx mission collected samples from Bennu and returned them to Earth in 2023.",
+        "funFacts": [
+            "Bennu is potentially hazardous - it may impact Earth in 2182.",
+            "OSIRIS-REx collected samples from Bennu's surface.",
+            "Its surface is rocky and boulder-covered, not smooth.",
+            "Bennu is a 'rubble pile' asteroid held together by gravity."
+        ],
+        "discoveredBy": "Lincoln Near-Earth Asteroid Research",
+        "discoveryYear": 1999,
+        "imageKeyword": "bennu asteroid osiris-rex"
+    },
+    {
+        "id": "ryugu",
+        "name": "Ryugu",
+        "type": "asteroid",
+        "diameterKm": 0.9,
+        "orbitType": "near_earth",
+        "orbitalPeriodYears": 1.3,
+        "distanceFromSunAU": 1.19,
+        "description": "Ryugu is a diamond-shaped near-Earth asteroid. Japan's Hayabusa2 mission collected samples and returned them to Earth in 2020.",
+        "funFacts": [
+            "Hayabusa2 collected samples from both surface and subsurface.",
+            "Ryugu has a top-like spinning shape.",
+            "Its surface is covered with large boulders.",
+            "Named after a dragon's palace in Japanese folklore."
+        ],
+        "discoveredBy": "Lincoln Near-Earth Asteroid Research",
+        "discoveryYear": 1999,
+        "imageKeyword": "ryugu asteroid hayabusa"
+    },
+    {
+        "id": "apophis",
+        "name": "Apophis",
+        "type": "asteroid",
+        "diameterKm": 0.37,
+        "orbitType": "near_earth",
+        "orbitalPeriodYears": 0.89,
+        "distanceFromSunAU": 0.92,
+        "description": "Apophis is a near-Earth asteroid that will pass extremely close to Earth in 2029 - closer than some satellites. It caused a brief scare when first discovered due to potential impact.",
+        "funFacts": [
+            "On April 13, 2029, Apophis will pass within 31,000 km of Earth.",
+            "It will be visible to the naked eye during the 2029 flyby.",
+            "Named after the Egyptian god of chaos and destruction.",
+            "Initial calculations showed a 2.7% chance of impact in 2029."
+        ],
+        "discoveredBy": "Roy Tucker, David Tholen, Fabrizio Bernardi",
+        "discoveryYear": 2004,
+        "imageKeyword": "apophis asteroid near-earth"
+    },
+    {
+        "id": "itokawa",
+        "name": "Itokawa",
+        "type": "asteroid",
+        "diameterKm": 0.33,
+        "orbitType": "near_earth",
+        "orbitalPeriodYears": 1.52,
+        "distanceFromSunAU": 1.32,
+        "description": "Itokawa is a peanut-shaped near-Earth asteroid. Japan's Hayabusa mission returned samples from Itokawa in 2010.",
+        "funFacts": [
+            "First asteroid from which samples were returned to Earth.",
+            "Itokawa is a 'rubble pile' of loosely packed rocks.",
+            "Named after Hideo Itokawa, father of Japanese rocketry.",
+            "Its surface has almost no small craters due to seismic shaking."
+        ],
+        "discoveredBy": "LINEAR",
+        "discoveryYear": 1998,
+        "imageKeyword": "itokawa asteroid hayabusa"
+    },
+    {
+        "id": "psyche",
+        "name": "Psyche",
+        "type": "asteroid",
+        "diameterKm": 226,
+        "orbitType": "main_belt",
+        "orbitalPeriodYears": 5.0,
+        "distanceFromSunAU": 2.92,
+        "description": "Psyche is a large metal-rich asteroid that may be the exposed core of a protoplanet. NASA's Psyche mission launched in 2023 to study it.",
+        "funFacts": [
+            "Psyche may be worth $10 quintillion in metals.",
+            "It could be the core of a Mars-sized planet that lost its crust.",
+            "The Psyche spacecraft will arrive in 2029.",
+            "Named after the Greek goddess of the soul."
+        ],
+        "discoveredBy": "Annibale de Gasparis",
+        "discoveryYear": 1852,
+        "imageKeyword": "psyche asteroid metal"
+    }
+]

@@ -34,7 +34,8 @@ class ApodModel {
 
     return ApodModel(
       title: json['title'] as String? ?? 'Untitled',
-      explanation: json['explanation'] as String? ?? 'No description available.',
+      explanation:
+          json['explanation'] as String? ?? 'No description available.',
       url: json['url'] as String? ?? '',
       hdurl: json['hdurl'] as String?,
       mediaType: json['media_type'] as String? ?? 'image',

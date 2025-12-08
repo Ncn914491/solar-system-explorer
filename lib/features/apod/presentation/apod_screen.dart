@@ -1,3 +1,4 @@
+import 'dart:typed_data';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -16,8 +17,9 @@ class ApodScreen extends StatefulWidget {
 class _ApodScreenState extends State<ApodScreen> {
   final NasaApiService _apiService = NasaApiService();
   final ApodCacheService _cacheService = ApodCacheService();
-  
+
   ApodModel? _apodData;
+  Uint8List? _cachedImageBytes;
   bool _isLoading = true;
   String? _errorMessage;
   bool _isOfflineMode = false;
@@ -38,26 +40,29 @@ class _ApodScreenState extends State<ApodScreen> {
     try {
       // Try to fetch fresh APOD from NASA API
       final apod = await _apiService.fetchApod();
-      
+
       if (mounted) {
         setState(() {
           _apodData = apod;
           _isLoading = false;
           _isOfflineMode = false;
+          _cachedImageBytes = null; // Use network image for fresh data
         });
-        
-        // Cache the successful result
+
+        // Cache the successful result (including image)
         await _cacheService.cacheApodData(apod);
       }
     } catch (e) {
       // Network request failed - try to load from cache
       final cachedApod = await _cacheService.getCachedApod();
-      
+      final cachedImage = await _cacheService.getCachedImage();
+
       if (mounted) {
         if (cachedApod != null) {
           // We have cached data - show it with offline indicator
           setState(() {
             _apodData = cachedApod;
+            _cachedImageBytes = cachedImage;
             _isLoading = false;
             _isOfflineMode = true;
           });
@@ -102,6 +107,7 @@ class _ApodScreenState extends State<ApodScreen> {
     } else if (_apodData != null) {
       return _ApodContent(
         apod: _apodData!,
+        cachedImageBytes: _cachedImageBytes,
         onRefresh: _loadApod,
         isOfflineMode: _isOfflineMode,
       );
@@ -126,7 +132,10 @@ class _LoadingView extends StatelessWidget {
           Text(
             'Fetching the cosmos...',
             style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.7),
+                  color: Theme.of(context)
+                      .colorScheme
+                      .onSurface
+                      .withValues(alpha: 0.7),
                 ),
           ),
         ],
@@ -165,7 +174,10 @@ class _ErrorView extends StatelessWidget {
             Text(
               error.toString().replaceAll('Exception: ', ''),
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.7),
+                    color: Theme.of(context)
+                        .colorScheme
+                        .onSurface
+                        .withValues(alpha: 0.7),
                   ),
               textAlign: TextAlign.center,
             ),
@@ -185,11 +197,13 @@ class _ErrorView extends StatelessWidget {
 /// Widget to display the APOD content
 class _ApodContent extends StatelessWidget {
   final ApodModel apod;
+  final Uint8List? cachedImageBytes;
   final VoidCallback onRefresh;
   final bool isOfflineMode;
 
   const _ApodContent({
     required this.apod,
+    this.cachedImageBytes,
     required this.onRefresh,
     this.isOfflineMode = false,
   });
@@ -215,15 +229,17 @@ class _ApodContent extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: Colors.orange.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: Colors.orange.withValues(alpha: 0.5)),
+                    border:
+                        Border.all(color: Colors.orange.withValues(alpha: 0.5)),
                   ),
                   child: Row(
                     children: [
-                      const Icon(Icons.cloud_off, color: Colors.orange, size: 20),
+                      const Icon(Icons.cloud_off,
+                          color: Colors.orange, size: 20),
                       const SizedBox(width: 12),
                       Expanded(
                         child: Text(
-                          'Offline Mode: Showing last saved APOD',
+                          'Offline Mode: Showing cached APOD${cachedImageBytes != null ? ' with saved image' : ''}',
                           style: theme.textTheme.bodyMedium?.copyWith(
                             color: Colors.orange.withValues(alpha: 0.9),
                           ),
@@ -241,7 +257,7 @@ class _ApodContent extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 8),
-              
+
               // Date
               Text(
                 formattedDate,
@@ -253,8 +269,11 @@ class _ApodContent extends StatelessWidget {
               const SizedBox(height: 24),
 
               // Media (Image or Placeholder)
-              _MediaCard(apod: apod),
-              
+              _MediaCard(
+                apod: apod,
+                cachedImageBytes: cachedImageBytes,
+              ),
+
               const SizedBox(height: 24),
 
               // Explanation
@@ -287,7 +306,8 @@ class _ApodContent extends StatelessWidget {
                       Text(
                         'Copyright: ${apod.copyright}',
                         style: theme.textTheme.bodySmall?.copyWith(
-                          color: theme.colorScheme.onSurface.withValues(alpha: 0.5),
+                          color: theme.colorScheme.onSurface
+                              .withValues(alpha: 0.5),
                           fontStyle: FontStyle.italic,
                         ),
                       ),
@@ -318,8 +338,12 @@ class _ApodContent extends StatelessWidget {
 /// Widget to handle image vs video display
 class _MediaCard extends StatefulWidget {
   final ApodModel apod;
+  final Uint8List? cachedImageBytes;
 
-  const _MediaCard({required this.apod});
+  const _MediaCard({
+    required this.apod,
+    this.cachedImageBytes,
+  });
 
   @override
   State<_MediaCard> createState() => _MediaCardState();
@@ -327,11 +351,20 @@ class _MediaCard extends StatefulWidget {
 
 class _MediaCardState extends State<_MediaCard> {
   late bool _imageError;
-  
+
   @override
   void initState() {
     super.initState();
     _imageError = false;
+  }
+
+  @override
+  void didUpdateWidget(_MediaCard oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    // Reset error state when apod changes
+    if (oldWidget.apod.url != widget.apod.url) {
+      _imageError = false;
+    }
   }
 
   String _getImageUrl() {
@@ -346,7 +379,45 @@ class _MediaCardState extends State<_MediaCard> {
   @override
   Widget build(BuildContext context) {
     final isImage = widget.apod.mediaType == 'image';
-    
+
+    // If we have cached image bytes, show them directly
+    if (widget.cachedImageBytes != null && isImage) {
+      return Card(
+        clipBehavior: Clip.antiAlias,
+        elevation: 8,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        child: Stack(
+          children: [
+            Image.memory(
+              widget.cachedImageBytes!,
+              fit: BoxFit.cover,
+              width: double.infinity,
+            ),
+            Positioned(
+              top: 8,
+              right: 8,
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                decoration: BoxDecoration(
+                  color: Colors.black54,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: const Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(Icons.save, color: Colors.white70, size: 14),
+                    SizedBox(width: 4),
+                    Text('Cached',
+                        style: TextStyle(color: Colors.white70, fontSize: 12)),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
     if (_imageError) {
       // Show error state with link to original image
       return Card(
@@ -453,7 +524,7 @@ class _MediaCardState extends State<_MediaCard> {
                     });
                   }
                 });
-                
+
                 return Container(
                   height: 300,
                   color: Colors.black26,
@@ -470,7 +541,8 @@ class _MediaCardState extends State<_MediaCard> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Icon(Icons.play_circle_outline, size: 64, color: Colors.white),
+                  const Icon(Icons.play_circle_outline,
+                      size: 64, color: Colors.white),
                   const SizedBox(height: 16),
                   Text(
                     'This APOD is a video',

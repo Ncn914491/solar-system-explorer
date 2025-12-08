@@ -1,0 +1,162 @@
+[
+    {
+        "id": "perseids",
+        "name": "Perseids",
+        "peakDate": "August 12-13",
+        "activeStart": "July 17",
+        "activeEnd": "August 24",
+        "zenithalHourlyRate": 100,
+        "speed": 59,
+        "parentBody": "Comet Swift-Tuttle",
+        "radiantConstellation": "Perseus",
+        "description": "The Perseids are one of the best meteor showers to observe, producing up to 100 meteors per hour at peak. They are famous for producing bright fireballs.",
+        "funFacts": [
+            "Known since at least 36 AD, making it one of the oldest recorded showers.",
+            "The meteors are debris from Comet Swift-Tuttle.",
+            "Perseids can appear anywhere in the sky, but trace back to Perseus.",
+            "Best viewed in the Northern Hemisphere during warm summer nights."
+        ],
+        "bestViewingHemisphere": "Northern",
+        "imageKeyword": "perseid meteor shower"
+    },
+    {
+        "id": "geminids",
+        "name": "Geminids",
+        "peakDate": "December 13-14",
+        "activeStart": "December 4",
+        "activeEnd": "December 20",
+        "zenithalHourlyRate": 150,
+        "speed": 35,
+        "parentBody": "Asteroid 3200 Phaethon",
+        "radiantConstellation": "Gemini",
+        "description": "The Geminids are considered the most reliable annual meteor shower, producing up to 150 multicolored meteors per hour. Unusually, they originate from an asteroid rather than a comet.",
+        "funFacts": [
+            "The only major meteor shower caused by an asteroid.",
+            "Produces meteors in multiple colors including white, yellow, green, and red.",
+            "Geminid meteors are denser than other shower meteors.",
+            "The shower is getting stronger over time."
+        ],
+        "bestViewingHemisphere": "Both",
+        "imageKeyword": "geminid meteor shower"
+    },
+    {
+        "id": "leonids",
+        "name": "Leonids",
+        "peakDate": "November 17-18",
+        "activeStart": "November 6",
+        "activeEnd": "November 30",
+        "zenithalHourlyRate": 15,
+        "speed": 71,
+        "parentBody": "Comet Tempel-Tuttle",
+        "radiantConstellation": "Leo",
+        "description": "The Leonids are famous for producing meteor storms roughly every 33 years when Earth passes through dense debris trails. The 1833 storm produced hundreds of thousands of meteors per hour.",
+        "funFacts": [
+            "The 1833 Leonid storm sparked modern meteor astronomy.",
+            "Leonids are the fastest meteors at 71 km/s.",
+            "Major storms occur roughly every 33 years.",
+            "The 1966 storm produced 40 meteors per second."
+        ],
+        "bestViewingHemisphere": "Northern",
+        "imageKeyword": "leonid meteor shower storm"
+    },
+    {
+        "id": "quadrantids",
+        "name": "Quadrantids",
+        "peakDate": "January 3-4",
+        "activeStart": "December 28",
+        "activeEnd": "January 12",
+        "zenithalHourlyRate": 120,
+        "speed": 41,
+        "parentBody": "Asteroid 2003 EH1",
+        "radiantConstellation": "Boötes",
+        "description": "The Quadrantids have a very short peak of only a few hours but can produce up to 120 meteors per hour. They are named after a now-defunct constellation.",
+        "funFacts": [
+            "Named after the obsolete constellation Quadrans Muralis.",
+            "The peak lasts only about 6 hours.",
+            "May originate from a 'dead comet' that lost its ice.",
+            "Often missed due to poor January weather in the Northern Hemisphere."
+        ],
+        "bestViewingHemisphere": "Northern",
+        "imageKeyword": "quadrantid meteor shower"
+    },
+    {
+        "id": "orionids",
+        "name": "Orionids",
+        "peakDate": "October 21-22",
+        "activeStart": "October 2",
+        "activeEnd": "November 7",
+        "zenithalHourlyRate": 20,
+        "speed": 66,
+        "parentBody": "Comet Halley",
+        "radiantConstellation": "Orion",
+        "description": "The Orionids are debris from the famous Halley's Comet. They produce fast meteors that often leave persistent trains.",
+        "funFacts": [
+            "Orionids are debris from Halley's Comet.",
+            "Earth encounters this debris twice yearly (Orionids and Eta Aquariids).",
+            "The meteors are very fast at 66 km/s.",
+            "Often produce persistent glowing trains in the sky."
+        ],
+        "bestViewingHemisphere": "Both",
+        "imageKeyword": "orionid meteor shower halley"
+    },
+    {
+        "id": "lyrids",
+        "name": "Lyrids",
+        "peakDate": "April 22-23",
+        "activeStart": "April 16",
+        "activeEnd": "April 25",
+        "zenithalHourlyRate": 18,
+        "speed": 49,
+        "parentBody": "Comet Thatcher",
+        "radiantConstellation": "Lyra",
+        "description": "The Lyrids are one of the oldest known meteor showers, with records going back 2,700 years to ancient China. They occasionally produce outbursts of up to 100 meteors per hour.",
+        "funFacts": [
+            "First recorded in 687 BC in China.",
+            "Lyrids occasionally produce outbursts of 100+ meteors per hour.",
+            "Comet Thatcher won't return until 2283.",
+            "The radiant is near the bright star Vega."
+        ],
+        "bestViewingHemisphere": "Northern",
+        "imageKeyword": "lyrid meteor shower"
+    },
+    {
+        "id": "eta_aquariids",
+        "name": "Eta Aquariids",
+        "peakDate": "May 5-6",
+        "activeStart": "April 19",
+        "activeEnd": "May 28",
+        "zenithalHourlyRate": 50,
+        "speed": 66,
+        "parentBody": "Comet Halley",
+        "radiantConstellation": "Aquarius",
+        "description": "The Eta Aquariids are the second meteor shower associated with Halley's Comet. They are best viewed from the Southern Hemisphere where they can produce 50+ meteors per hour.",
+        "funFacts": [
+            "Sister shower to the Orionids, both from Halley's Comet.",
+            "Better viewed from the Southern Hemisphere.",
+            "Meteors can be seen up to half the night.",
+            "Fast meteors at 66 km/s, similar to Orionids."
+        ],
+        "bestViewingHemisphere": "Southern",
+        "imageKeyword": "eta aquariid meteor shower"
+    },
+    {
+        "id": "taurids",
+        "name": "Taurids",
+        "peakDate": "November 4-5",
+        "activeStart": "September 10",
+        "activeEnd": "December 10",
+        "zenithalHourlyRate": 5,
+        "speed": 27,
+        "parentBody": "Comet Encke",
+        "radiantConstellation": "Taurus",
+        "description": "The Taurids are a long-lasting shower known for producing exceptionally bright fireballs. They occur in two branches: Northern and Southern Taurids.",
+        "funFacts": [
+            "Famous for producing spectacular fireballs.",
+            "The slowest major meteor shower at 27 km/s.",
+            "Active for over 3 months, the longest of any shower.",
+            "Some scientists link Taurids to the Tunguska event."
+        ],
+        "bestViewingHemisphere": "Both",
+        "imageKeyword": "taurid meteor shower fireball"
+    }
+]

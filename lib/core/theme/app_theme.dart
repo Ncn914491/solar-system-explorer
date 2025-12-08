@@ -1,5 +1,15 @@
 import 'package:flutter/material.dart' as material;
-import 'package:flutter/material.dart' show Color, TextStyle, FontWeight, RoundedRectangleBorder, BorderRadius, EdgeInsets, Brightness, Colors, Radius;
+import 'package:flutter/material.dart'
+    show
+        Color,
+        TextStyle,
+        FontWeight,
+        RoundedRectangleBorder,
+        BorderRadius,
+        EdgeInsets,
+        Brightness,
+        Colors,
+        Radius;
 
 /// App theme configuration for Solar System Explorer
 /// Dark space theme with deep cosmic colors
@@ -8,11 +18,13 @@ class AppTheme {
   AppTheme._();
 
   // Color palette - Deep Space Theme
-  static const Color _deepSpaceBackground = Color(0xFF0A0E27); // Very dark blue-black
+  static const Color _deepSpaceBackground =
+      Color(0xFF0A0E27); // Very dark blue-black
   static const Color _spaceBlue = Color(0xFF1A1F3A); // Dark blue surface
   static const Color _cosmicCyan = Color(0xFF00D9FF); // Bright cyan primary
   static const Color _nebulaPurple = Color(0xFF9D4EDD); // Purple accent
-  static const Color _starWhite = Color(0xFFE8F4F8); // Slightly blue-tinted white
+  static const Color _starWhite =
+      Color(0xFFE8F4F8); // Slightly blue-tinted white
   static const Color _cardSurface = Color(0xFF151B33); // Card background
 
   /// Main dark space theme
@@ -29,23 +41,23 @@ class AppTheme {
         // Background colors
         surface: _deepSpaceBackground,
         surfaceContainerHighest: _spaceBlue,
-        
+
         // Primary colors
         primary: _cosmicCyan,
         onPrimary: Color(0xFF003544),
         primaryContainer: Color(0xFF004D61),
         onPrimaryContainer: Color(0xFFB8EAFF),
-        
+
         // Secondary colors
         secondary: _nebulaPurple,
         onSecondary: Color(0xFF3D1152),
         secondaryContainer: Color(0xFF551A70),
         onSecondaryContainer: Color(0xFFF2DAFF),
-        
+
         // Error colors
         error: Color(0xFFFFB4AB),
         onError: Color(0xFF690005),
-        
+
         // Text colors
         onSurface: _starWhite,
       ),

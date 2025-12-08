@@ -92,7 +92,7 @@ class _ConstellationListScreenState extends State<ConstellationListScreen> {
               }
 
               final constellations = snapshot.data!;
-              
+
               // Use LayoutBuilder to handle web/desktop constraints
               return LayoutBuilder(
                 builder: (context, constraints) {
@@ -117,7 +117,8 @@ class _ConstellationListScreenState extends State<ConstellationListScreen> {
 
   Widget _buildList(List<Constellation> constellations) {
     return ListView.builder(
-      padding: const EdgeInsets.fromLTRB(16, 100, 16, 16), // Top padding for AppBar
+      padding:
+          const EdgeInsets.fromLTRB(16, 100, 16, 16), // Top padding for AppBar
       itemCount: constellations.length,
       itemBuilder: (context, index) {
         final constellation = constellations[index];
@@ -150,7 +151,8 @@ class _ConstellationListScreenState extends State<ConstellationListScreen> {
                     decoration: BoxDecoration(
                       color: Colors.indigo.withOpacity(0.3),
                       shape: BoxShape.circle,
-                      border: Border.all(color: Colors.indigoAccent.withOpacity(0.5)),
+                      border: Border.all(
+                          color: Colors.indigoAccent.withOpacity(0.5)),
                     ),
                     child: Center(
                       child: Text(
@@ -186,7 +188,8 @@ class _ConstellationListScreenState extends State<ConstellationListScreen> {
                                   color: Colors.purple.withOpacity(0.4),
                                   borderRadius: BorderRadius.circular(4),
                                   border: Border.all(
-                                      color: Colors.purpleAccent.withOpacity(0.5)),
+                                      color:
+                                          Colors.purpleAccent.withOpacity(0.5)),
                                 ),
                                 child: const Text(
                                   'Zodiac',
@@ -202,12 +205,16 @@ class _ConstellationListScreenState extends State<ConstellationListScreen> {
                         const SizedBox(height: 4),
                         Text(
                           '${constellation.hemisphere} Hemisphere',
-                          style: TextStyle(color: Colors.white.withOpacity(0.7), fontSize: 14),
+                          style: TextStyle(
+                              color: Colors.white.withOpacity(0.7),
+                              fontSize: 14),
                         ),
                         const SizedBox(height: 4),
                         Text(
                           'Best seen: ${constellation.bestViewingMonths.join(", ")}',
-                          style: TextStyle(color: Colors.blueAccent.withOpacity(0.9), fontSize: 12),
+                          style: TextStyle(
+                              color: Colors.blueAccent.withOpacity(0.9),
+                              fontSize: 12),
                         ),
                       ],
                     ),

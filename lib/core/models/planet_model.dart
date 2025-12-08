@@ -15,6 +15,7 @@ class Planet {
   final String? atmosphere;
   final List<String> funFacts;
   final String? textureAsset;
+  final List<String> moonNames;
 
   const Planet({
     required this.id,
@@ -32,14 +33,19 @@ class Planet {
     this.atmosphere,
     this.funFacts = const [],
     this.textureAsset,
+    this.moonNames = const [],
   });
 
   factory Planet.fromJson(Map<String, dynamic> json) {
     return Planet(
       id: json['id'] as String,
       name: json['name'] as String,
-      shortDescription: json['shortDescription'] as String? ?? json['description'] as String? ?? '',
-      detailedDescription: json['detailedDescription'] as String? ?? json['description'] as String? ?? '',
+      shortDescription: json['shortDescription'] as String? ??
+          json['description'] as String? ??
+          '',
+      detailedDescription: json['detailedDescription'] as String? ??
+          json['description'] as String? ??
+          '',
       diameterKm: (json['diameterKm'] as num).toDouble(),
       massKg: json['massKg'] as String,
       distanceFromSunKm: (json['distanceFromSunKm'] as num).toDouble(),
@@ -54,6 +60,10 @@ class Planet {
               .toList() ??
           [],
       textureAsset: json['textureAsset'] as String?,
+      moonNames: (json['moonNames'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          [],
     );
   }
 
@@ -74,6 +84,7 @@ class Planet {
       'atmosphere': atmosphere,
       'funFacts': funFacts,
       'textureAsset': textureAsset,
+      'moonNames': moonNames,
     };
   }
 }
